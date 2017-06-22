@@ -51,8 +51,14 @@ var server = http.createServer((req, res) => {
     if (req.url == "/projects") {
         res.write(JSON.stringify(projects));
     }
-    else {
-        res.write("Try asking for '/projects'!!!!!!")
+    else if (req.url == "/"){
+        res.write(fs.readFileSync('./index.html','utf-8'));
+    }
+    else if (req.url == "/client.js"){
+        res.write(fs.readFileSync('./client.js','utf-8'));
+    }
+    else if (req.url == "/styles.css"){
+        res.write(fs.readFileSync('./styles.css','utf-8'));
     }
     res.end();
 });
