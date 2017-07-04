@@ -29,6 +29,39 @@
     color: darkslategray;
 }
 
+.sectionTitle{
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16pt;
+    font-weight: lighter;
+    color: darkslategray;
+}
+
+.sectionSubtitle{
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12pt;
+    font-weight: bold;
+    color: darkslategray;
+}
+
+.paragraph{
+    position: relative;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+    font-weight: lighter;
+    color: darkslategray;
+}
+
+.caption{
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 8pt;
+    font-weight: lighter;
+    color: slategray;
+}
+
 img{
     position: relative;
     width: 100%;

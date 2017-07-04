@@ -26,32 +26,59 @@ window.onload = () => {
      * projectElement
      */
     function ProjectElementFromObject(projectObject) {
-        var responsive = $('<div></div>');
-        responsive.addClass('responsive');
+        var responsive = $('<div></div>').addClass('responsive');
 
-        var a_project = $("<div></div>");
-        a_project.addClass('a_project');
+        var a_project = $("<div></div>").addClass('a_project');
 
-        var title_description = $('<div></div>');
-        title_description.addClass('title_description');
+        var coverImagePath = '/projects/' + projectObject.currentFolderName + '/imageData/cover.png';
+        
+        var image = $("<div></div>").append('<img src="'+coverImagePath+'">');
 
-        var projectTitle = $('<div></div>');
-        projectTitle.addClass('projectTitle');
-        projectTitle.text(projectObject.title);
+        var title_description = $('<div></div>').addClass('title_description');
 
-        var projectDescription = $('<div></div>');
-        projectDescription.addClass('projectDescription');
-        projectDescription.text(projectObject.description);
+        var projectTitle = $('<div></div>').addClass('projectTitle').text(projectObject.title);
+
+        var projectDescription = $('<div></div>').addClass('projectDescription').text(projectObject.description);
+
+        var textData = $('<div></div>').addClass('paragraph').text(projectObject.textData);
+        /*
+        var textDataMapped = textData.map(){
+            var textPiece = $('<div></div>');
+            if textData[i] begins with a capital and ends with '/n'{
+                var textPiece.addClass('sectionTitle'); 
+            }
+            else if textData[i] is all caps{
+                var textPiece.addClass('sectionSubtitle'); 
+            }
+            else if textData[i] begins with '[' and ends with ']'{
+                var textPiece.addClass('caption'); 
+            }
+            else{
+                var textPiece.addClass('paragraph');
+            }
+            textPiece.text(textData[i]);
+            textData.append(textPiece);
+        }
+        */
+
+        //jQuery.HTML(projectObject.projectPage) 
 
         responsive.append(a_project);
-        a_project.append(title_description);
-        title_description.append(projectTitle);
-        title_description.append(projectDescription);
+        a_project.append(title_description, image);
+        title_description.append(projectTitle, projectDescription);
 
         return responsive;
 
 
     }
+
+    /*
+    function ProjectPageElements(projectObject.projectPage) {
+        var $p = $("p").html("testing! testing!");
+        return $p;
+    }*/
+    
+
 
     $.get("/projects", function (data, status) {
         alert("Data: " + data + "\nStatus: " + status);
@@ -67,6 +94,20 @@ window.onload = () => {
         })
     });
 
+    /*$.get("/projects/project_1/SampleProjectPage", function (data, status) {
+        alert("Data: " + data + "\nStatus: " + status);
+        var dataFromServer = JSON.parse(data);
+
+
+        var htmlElements = dataFromServer.map((currentItem) => {
+            return ProjectPageElements(currentItem);
+        });
+
+        htmlElements.forEach((element) => {
+            $('body').append(element);
+        })
+    });*/
+    
 
 
 };
