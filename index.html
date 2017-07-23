@@ -1,13 +1,226 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Projects</title>
-            <link rel="stylesheet" type="text/css" href="styles.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-            <script src="client.js"></script>
-        </head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap Projects</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-       <body>
-       </body>
+<style>
+    body {padding-top:50px; padding-left:0; padding-right:0;}
+    .navbar-toggler-icon{
+        padding: .5rem, .5rem;
+        font-size: 1rem;
+    }
+    .navbar-light .navbar-toggler {
+    border-color: rgba(0,0,0,0);
+    }
+    #more_projects {
+        background-color:darkgrey;
+        display: none;
+    }
+    #about {background-color: lightgrey;}
+    /* 
+    img {padding-bottom:30px;}
+    */
 
-    </html>
+    .featured_section {padding-right:20px;}
+    .featured_img {width:100%; height:400px; /*background-image:url("projects/LanguageLearning/imageData/cover.png");*/ background-size:cover;}
+    .container{text-align:center; padding-top:15px; padding-bottom:15px;}
+    #form_container {margin-left:20%; margin-right:20%; padding-top:30px; padding-bottom:30px;} 
+    /* add @media query for making the margins 0px when less than 300 */
+
+    @media only screen and (max-width:992px) {
+       .featured_img {
+           height:300px;
+       }
+        #form_container {
+            margin-left:10%; margin-right:10%;
+        }
+    @media only screen and (max-width:575px) {
+        .featured_img {
+           height:200px;
+       }
+       .featured_section {
+           padding-left:20px;
+       }
+       .featured_text{
+           padding-top:10px;
+           /* -- also make text smaller */
+           font-size: 80%;
+       }
+       
+        #form_container {
+            margin:0px;
+        }
+        
+</style>
+
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">Oriane Daley</a>
+
+        <div class="collapse navbar-collapse" id="links">
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                <li id="projects" class="nav-item active"><a class="nav-link" href="#project_covers">Projects<span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--
+    <div class="jumbotron">
+        <div class="container">
+            <figure class="figure">
+            <img class="figure-img img-fluid" src="projects/LanguageLearning/imageData/cover.png" alt="Enter Letters screen">
+            <figcaption class="figure-caption text-left">featured project</figcaption>
+            </figure>
+        </div>
+    </div>
+    -->
+
+
+    <div id="project_html">
+    </div>
+
+    
+
+
+    <div id="more_projects" class="container">
+        
+        <h4>More Projects</h4>
+        
+        <!-- 
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+                <div class="card card-inverse">
+                    <img class="card-img figure-img img-fluid" src="projects/LanguageLearning/imageData/cover.png">
+                    <div class="card-img-overlay">
+                        <h4>Project Title</h4>
+                        <p class="card-text">Quick description of this project and it's purpose.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        
+        <div class="row">
+            <div class="col-xs-12 col-sm-6"><img class="figure-img img-fluid" src="projects/LanguageLearning/imageData/cover.png" alt="Enter Letters screen"></div>
+            <div class="col-xs-12 col-sm-6"><img class="figure-img img-fluid" src="projects/LanguageLearning/imageData/cover.png" alt="Enter Letters screen"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6"><img class="figure-img img-fluid" src="projects/LanguageLearning/imageData/cover.png" alt="Enter Letters screen"></div>
+            <div class="col-xs-12 col-sm-6"><img class="figure-img img-fluid" src="projects/LanguageLearning/imageData/cover.png" alt="Enter Letters screen"></div>
+        </div>
+
+        -->
+    </div>
+
+    <div id="project_covers">
+        <!--
+        <div class="featured_section">
+            <div class="row">
+                <div class="featured_img col-xs-12 col-sm-8">
+                    <img id="featured" class="figure-img img-fluid" src="projects/LanguageLearning/imageData/cover.png" alt="Enter Letters screen">
+                </div>
+                <div id="languagelearning" class="featured_text col-xs-12 col-sm-4">
+                    <h4>Language Learning</h4>
+                    <p><b>Research | Design | Prototype | Test </b></p>
+                    <p>Language learning application more words and more words to describe this project and motivation behind it.</p>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+    
+
+        <div id="about" class="container-fluid">
+            <div class="container">
+                <div class="col-xs-12">
+                <h1>About</h1>
+                <p>UX Researcher and Designer</p>
+               
+                </div>
+            </div>
+        </div>
+
+
+     <div id="contact">
+        <div class="container-fluid">
+            <div class="container">
+                <h1>Contact</h1>
+
+                <div id="thanks" class="collapse alert alert-success alert-dismissible fade" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>Thanks!</strong> Your message was sent.
+                </div>
+
+                <!-- I think I'm only allowing myself to toggle the alert with the submit button once...could be why on the second click of the submit button, the form disappears but the alert does not show up.' -->
+
+                <div id="form_container">
+                <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="contactName" placeholder="Name">
+                        </div>
+                    
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="contactEmail" placeholder="Email">
+                        </div>
+
+                    <div class="form-group">
+                            <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                    </div>
+
+                            <button id="submit" type="submit" class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#thanks">Send Message</button>
+                </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="client.js"></script>
+
+<!--
+<script type="text/javascript">
+        $('#projects').click(function(){
+            $('#about').collapse('show');
+        })
+
+        $('#projects').click(function(){
+                $('#about').hide();
+            });
+        </script>-->
+
+<script type="text/javascript">
+            
+            $('#submit').click(function(){
+                $('form').hide();
+            });
+            $('.alert').click(function(){
+                $('form').show();
+            });
+    </script>
+
+    
+
+  </body>
+</html>

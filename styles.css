@@ -1,6 +1,42 @@
+body {
+    background-color: #f5f5f5; 
+    padding: 30px;
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #a59a96;
+}
+
+#container {
+    padding-top: 50px;
+    
+}
+
+.topnav li {
+    display: inline-block;
+    color: #FFF;
+    text-align: center;
+    padding: 14px 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+
+.topnav li:hover {
+    background-color: #d7ccc8;
+    color: #424242;
+}
+
 .a_project{
     position: relative;
-    height: 500px;
+    /*height: 500px;*/
+    margin: 50px;
+    display: block;
 }
 
 .title_description{
@@ -14,10 +50,10 @@
 }
 
 .projectTitle{
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     text-align: left;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 24pt;
+    font-size: 18pt;
     color: slategray;
 }
 
@@ -62,9 +98,9 @@
     color: slategray;
 }
 
-img{
+.cover img{
     position: relative;
-    width: 100%;
+    max-width: 100%;
     height: auto;
     /*clip: rect(0px,2630px,500px,0px);*/
     opacity: 1;
@@ -72,12 +108,26 @@ img{
     backface-visibility: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .cropped{
     object-fit: cover;
 
 }
 
-.a_project:hover img{
+.hide{
+    display: none;
+}
+
+.projectHTML {
+    background-color: white;
+    padding: 26px;
+}
+
+.a_project:hover .cover img{
     opacity: 0.2;
 }
 .a_project:hover .title_description{
@@ -86,9 +136,14 @@ img{
 
 
 .responsive{
-    width: 100%;
+    /*max-width: 100%;
+}
+*/
 }
 
+.visible{
+
+}
 
 @media only screen and (max-width: 700px){
    .projectTitle{
@@ -100,7 +155,7 @@ img{
 }
 
 @media only screen and (max-width: 500px){
-    .responsive img{
+    .responsive .cover img{
         object-fit: cover;
         min-height: 150px;
     }

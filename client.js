@@ -1,113 +1,153 @@
-$(document).ready(function () {
-    $('.projectTitle').hover(function () {
-        $(this).addClass('active');
-    }, function () {
-        $(this).removeClass('active');
-    }
-    );
 
-});
+var all_DOMlayouts = [];
+window.onload = function() {
 
-window.onload = () => {
-
-    var testProject =
-        {
-            title: 'THE TITLE OF PROJECT 1',
-            description: 'THE DESCRIPTION OF PROJECT 1',
-            textData:
-            ['aksjhfjkahgljaghk;ajehglaehgkjaehgjkhajkghAJKghjakghjahgjahkjghakj',
-                'uiaehtiu23y5823748327489237\n8497923749832749273894738924782937\n4892374982748394789327498237498237498',
-                'ASKJFHAKSJFHSKJSAJKFHAJKSHFKJASHFK\nAKSJDHASKJHDJHASKJDHSAJKHDSAJDHSAJK\nASJDHKASHDKJHASKJDHKAJSHKDHAHSKJDKHSAJD'
-            ]
-        };
-
-    /**
-     * returns an HTML element at the root of the
-     * projectElement
-     */
+      
     function ProjectElementFromObject(projectObject) {
-        var responsive = $('<div></div>').addClass('responsive');
-
-        var a_project = $("<div></div>").addClass('a_project');
-
-        var coverImagePath = '/projects/' + projectObject.currentFolderName + '/imageData/cover.png';
+        // properties storing jQuery objects for title, description, cover image and html from project object
         
-        var image = $("<div></div>").append('<img src="'+coverImagePath+'">');
+        this.projectHTML = $('<div></div>').html(projectObject.projectHTML);
 
-        var title_description = $('<div></div>').addClass('title_description');
+        // gets h1 title from projectHTML
+        this.projectTitleText = this.projectHTML.children('h1').text();
 
-        var projectTitle = $('<div></div>').addClass('projectTitle').text(projectObject.title);
+        // puts that title text into a project title div
+        this.projectTitle = $('<div></div>').addClass('projectTitle').text(this.projectTitleText);
 
-        var projectDescription = $('<div></div>').addClass('projectDescription').text(projectObject.description);
+        // gets description from projectHTML 
+        this.projectDescriptionText = this.projectHTML.children('p:first').text();
+        
+        // puts that description text into a project description div
+        this.projectDescription = $('<div></div>').addClass('projectDescription').text(this.projectDescriptionText);
 
-        var textData = $('<div></div>').addClass('paragraph').text(projectObject.textData);
+        this.coverImagePath = '/projects/' + projectObject.currentFolderName + '/imageData/cover.png';
+
+        //this.coverImage = $("<div></div>").addClass('featured_img').append('<img src="'+this.coverImagePath+'">');
+
+        this.coverImage = $("<div></div>").addClass('featured_img').css({'background-image': 'url("'+this.coverImagePath+'")'});
+            this.coverImage.addClass('col-xs-12 col-sm-8');
+    
+        this.dataFromServer = projectObject;
+
+        //make sure it brings you back to the top of the page to view the expanded project
+        //how to fix grey background gap above the expanded project
+        //fix 'More Projects' 
+        //expanded project isn't centered
+        //collapse project if anything else is clicked and re-sort
+        clickHandler = function(event){
+            //console.log(this);
+            
+            $('#project_covers').fadeOut('slow', function(){
+                    //$('.visible').empty();
+
+                    //$('section .projectHTML :visible').
+                    //$('#').prepend(this.project_container);
+                    //more = $('<div class="w3-container w3-center" id="more_projects"><h4><b>More Projects</b></h4></div>');
+                    //this.project_container.append(more);
+                    //need to take this More Projects away, maybe show/hide
+                    //this.htmlsection.fadeIn('slow');
+                    //this.htmlsection.addClass('visible');
+                    
+                    $('#project_html').empty();
+                    $('#project_html').append(this.projectHTML);
+                    $('#project_html').show();
+                    /*this.projectHTML.fadeIn('slow',function(){
+                        $('#project_covers').fadeIn('slow');
+                    });*/
+                    //$('#project_covers').fadeIn('slow');
+                    $('#more_projects').show();
+                    $('#project_covers').fadeIn();
+                    $('.featured_section').show();
+                    this.featured_section.hide();
+                    //also need to anchor page back to top!!
+
+            }.bind(this))
+        };
+        
         /*
-        var textDataMapped = textData.map(){
-            var textPiece = $('<div></div>');
-            if textData[i] begins with a capital and ends with '/n'{
-                var textPiece.addClass('sectionTitle'); 
-            }
-            else if textData[i] is all caps{
-                var textPiece.addClass('sectionSubtitle'); 
-            }
-            else if textData[i] begins with '[' and ends with ']'{
-                var textPiece.addClass('caption'); 
-            }
-            else{
-                var textPiece.addClass('paragraph');
-            }
-            textPiece.text(textData[i]);
-            textData.append(textPiece);
+        clickHandler = function(event){
+            //console.log(this);
+            $('section .cover').fadeOut('fast', function(){
+                //console.log(this);
+                $('.a_project').addClass('hide');
+                this.htmlsection.fadeIn('slow');
+            }.bind(this))
+        };
+        */
+        
+
+        this.DOMlayout =  function() {
+            
+            //new container for project
+            this.featured_section = $('<div></div>').addClass('featured_section').attr('id', this.projectTitleText);
+            //this.a_project = $("<div></div>").addClass('a_project');
+            //this.title_description = $('<div></div>').addClass('title_description');
+            //this.htmlsection = $('<section></section>').addClass('projectHTML');
+            //this.coversection = $('<section></section>').addClass('cover');
+            this.row = $('<div></div>').addClass('row');
+            this.coverText = $('<div></div>').addClass('featured_text col-xs-12 col-sm-4').append(this.projectTitle,this.projectDescription);
+            /*
+            //append all divs
+            this.project_container.append(this.coversection, this.htmlsection);
+            this.coversection.append(this.a_project);
+            this.a_project.append(this.title_description, this.coverImage);
+            this.title_description.append(this.projectTitle, this.projectDescription);
+            //this.htmlsection.append(this.projectHTML).hide();
+            */
+
+            this.featured_section.append(this.row);
+            this.row.append(this.coverImage,this.coverText);
+
+
+            //this.addHandlers();
+            this.featured_section.click(clickHandler.bind(this));
+            
+
+            $('#project_covers').append(this.featured_section);
+            //$('#project_html').append(this.projectHTML).hide();
+            //console.log('projectText: ' + this.projectDescriptionText);
         }
+
+        this.getRoot = function() {
+            return this.featured_section;
+        }
+
+        this.DOMlayout();
+    }
+
+
+    $.get("/projects", function (data, status){
+        
+        var dataFromServer = JSON.parse(data); 
+
+        var allProjects = dataFromServer.map(function(currentProjectObject) {
+            all_DOMlayouts.push(new ProjectElementFromObject(currentProjectObject));
+        });
+
+        //need way to re-sort projects back to original order - maybe with an array?
+        $('#projects').click(function(){
+            $('#project_html').fadeOut("slow", function(){
+                $('#project_html').empty();
+                $('.featured_section').show();
+                $('#project_covers').fadeIn('slow');
+                
+                //var section1 = $('.visible').siblings();
+                //console.log(section1);
+                //section1.fadeIn("slow");
+            });
+            $('#more_projects').fadeOut('slow');
+        });
+        
+        /*
+        $('#projects').click(function(){
+            $('.projectHTML').fadeOut("fast", function(){
+                $('section .cover').fadeIn("slow", function(){
+                    $('.a_project').removeClass('hide');
+                });
+            });
+        });
         */
 
-        //jQuery.HTML(projectObject.projectPage) 
-
-        responsive.append(a_project);
-        a_project.append(title_description, image);
-        title_description.append(projectTitle, projectDescription);
-
-        return responsive;
-
-
-    }
-
-    /*
-    function ProjectPageElements(projectObject.projectPage) {
-        var $p = $("p").html("testing! testing!");
-        return $p;
-    }*/
-    
-
-
-    $.get("/projects", function (data, status) {
-        alert("Data: " + data + "\nStatus: " + status);
-        var dataFromServer = JSON.parse(data);
-
-
-        var htmlElements = dataFromServer.map((currentItem) => {
-            return ProjectElementFromObject(currentItem);
-        });
-
-        htmlElements.forEach((element) => {
-            $('body').append(element);
-        })
     });
-
-    /*$.get("/projects/project_1/SampleProjectPage", function (data, status) {
-        alert("Data: " + data + "\nStatus: " + status);
-        var dataFromServer = JSON.parse(data);
-
-
-        var htmlElements = dataFromServer.map((currentItem) => {
-            return ProjectPageElements(currentItem);
-        });
-
-        htmlElements.forEach((element) => {
-            $('body').append(element);
-        })
-    });*/
-    
-
 
 };
