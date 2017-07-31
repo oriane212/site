@@ -83,6 +83,9 @@ var server = http.createServer(function(req, res) {
     else if (req.url == "/styles.css"){
         res.write(fs.readFileSync('./styles.css','utf-8'));
     }
+    else if (req.url == "/node_modules/@material/button/dist/mdc.button.css"){
+        res.write(fs.readFileSync('./node_modules/@material/button/dist/mdc.button.css','utf-8'));
+    }
     res.end();
 });
 

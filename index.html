@@ -9,8 +9,11 @@
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
 <style>
-    body {padding-top:50px; padding-left:0; padding-right:0;}
+    body {position:relative; padding-top:50px; padding-left:0; padding-right:0; /*: scroll;*/}
     .navbar-toggler-icon{
         padding: .5rem, .5rem;
         font-size: 1rem;
@@ -22,56 +25,217 @@
         background-color:darkgrey;
         display: none;
     }
-    #about {background-color: lightgrey;}
+    #about {background-color: #eceff1}
     /* 
     img {padding-bottom:30px;}
     */
 
-    .featured_section {padding-right:20px;}
-    .featured_img {width:100%; height:400px; /*background-image:url("projects/LanguageLearning/imageData/cover.png");*/ background-size:cover;}
-    .container{text-align:center; padding-top:15px; padding-bottom:15px;}
-    #form_container {margin-left:20%; margin-right:20%; padding-top:30px; padding-bottom:30px;} 
-    /* add @media query for making the margins 0px when less than 300 */
+    #project_container{
+        position:relative;
+        overflow-y: scroll;
+        height: 600px;
+
+    }
+
+    .featured_section {
+        padding-right:20px;
+        /*background-color:#efebe9;
+        margin: 12px;*/
+        margin-top:16px;
+        margin-bottom:16px;
+        }
+
+        /* ADD HOVER EFFECTS */
+
+    .featured_img {
+        width:100%; 
+        height:400px; /*background-image:url("projects/LanguageLearning/imageData/cover.png");*/ 
+        background-size:cover;
+        }
+
+    .featured_text{
+        padding-top:60px;
+       }
+
+    .container{text-align:center; padding-top:15px; padding-bottom:15px; }
+    
+    #form_container {max-width:400px;
+    margin: auto;/*margin-left:20%; margin-right:20%; padding-top:30px; padding-bottom:30px;*/} 
+     /*add @media query for making the margins 0px when less than 300 */
+
+     .form-control{
+         border-bottom: 1px solid rgba(0,0,0,.15);
+         border-left: none;
+         border-right: none;
+         border-top: none;
+         border-radius: 0rem;
+         
+     }
+
+     .form-control:focus {
+         border-bottom: 2px solid rgba(0,0,0,.6);
+     }
+
+     #submit{
+            background-color:#efebe9;
+            color:rgba(0,0,0,.7);
+        }
+     #submit:hover {
+         background-color:#bdb9b7;
+         color:rgba(0,0,0,.8);
+     }
+    
+    }
+    #contact h2 {
+        color:white;
+    }
+
+    .mdl-textfield__label:after {
+        background-color: rgb(63,81,181);
+        bottom: 11px;
+        height: 3px;
+    }
+
+
+    h2 {
+        color: rgba(0,0,0,.6);
+    } 
+        
+
+    .sidebar{height:100%;width:200px;background: url('projects/LanguageLearning/imageData/cover.png'), no-repeat, center, cover; position:absolute!important;z-index:2;overflow:auto}
+
+    .bgimg {
+    background: url('projects/LanguageLearning/imageData/cover.png'), no-repeat, center, cover; min-height:100%;
+
+
+    }
+
+    caseStudy_text {
+
+    }
+
+    
+    .two-col-img--scrollable{
+        overflow:hidden;
+        position:relative;
+    }
+    
+    .two-col-img{}
+
+    #scroll{
+        top: auto;
+        left: auto;
+        bottom: auto;
+        right: 0px;
+        margin: 0px;
+        display: block;
+        position: absolute;
+        box-sizing: content-box;
+        width: 50%;
+        height: 100%
+        }
+
+    .imgS{
+        opacity: 1;
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        height: 682px;
+        z-index: 2;
+        position: absolute;
+        margin: auto;
+        top: 0px;
+        left: 0px;
+        bottom: auto;
+        right: auto;
+        box-sizing: border-box;
+    }
+
+    .txt-col {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 39%;
+    position: relative;
+    z-index:1;
+}
+
+.txt-col__inner {
+    padding: 50px 0;
+    max-height: 100%;
+}
+    
+
+    @media only screen and (min-width:993px){
+        .featured_section {
+            opacity:.6;
+        }
+        .featured_section:hover {
+            opacity:1;
+        }
+    }
 
     @media only screen and (max-width:992px) {
        .featured_img {
            height:300px;
        }
-        #form_container {
-            margin-left:10%; margin-right:10%;
-        }
+       .projectTitle{
+           font-size: 14pt;
+       }
+       .projectDescription{
+           font-size: 10pt;
+       }
+    
+    
     @media only screen and (max-width:575px) {
         .featured_img {
            height:200px;
        }
        .featured_section {
            padding-left:20px;
+           padding-bottom:30px;
        }
        .featured_text{
            padding-top:10px;
            /* -- also make text smaller */
-           font-size: 80%;
        }
+
+       .projectTitle{
+           padding-bottom:5px;
+           font-size: 12pt;
+       }
+
+       .projectDescription{
+           font-size: 9pt;
+       }
+    }
        
-        #form_container {
-            margin:0px;
-        }
-        
+
 </style>
 
   </head>
+
+<!-- data-spy="scroll" data-target="#projectNav" data-offset="40" -->
+
   <body>
-    <nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+    <nav id="top_nav" class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Oriane Daley</a>
+        <a class="navbar-brand" href="/">Oriane Daley</a>
 
         <div class="collapse navbar-collapse" id="links">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                <li id="projects" class="nav-item active"><a class="nav-link" href="#project_covers">Projects<span class="sr-only">(current)</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li id="projects" class="nav-item"><a class="nav-link" href="#project_covers">Projects</a></li>
+                <li id="aboutLink" class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li id="contactLink" class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -87,16 +251,29 @@
     </div>
     -->
 
+    <!--
+        data-spy="scroll" data-target="#projectNav"
+        -->
 
     <div id="project_html">
+        <div id="project_container">
+             <div id="projectNav" class="navbar fixed-bottom navbar-light bg-faded">
+
+
+            </div>
+            <div id="project_row" class="row">
+                <div id="empty_col" class="col-sm-6"></div>
+                <div id="project_col" class="col-sm-6"></div>
+            </div>
+        </div>
     </div>
 
     
 
 
-    <div id="more_projects" class="container">
+    <div id="more_projects" class="container-fluid">
         
-        <h4>More Projects</h4>
+        <h2>More Projects</h2>
         
         <!-- 
         <div class="row">
@@ -147,7 +324,7 @@
         <div id="about" class="container-fluid">
             <div class="container">
                 <div class="col-xs-12">
-                <h1>About</h1>
+                <h2>About</h2>
                 <p>UX Researcher and Designer</p>
                
                 </div>
@@ -155,10 +332,29 @@
         </div>
 
 
+    <!--
+    <div id="caseStudy" class="two-col-img--scrollable">
+        <div class="container">
+            <div class="two-col-img">
+                <div id="scroll">
+                    <div class="imgS">
+                        <img class="figure-img" src="projects/LanguageLearning/imageData/cover.png" alt="Enter Letters screen">
+                    </div>
+                </div>
+                <div class="txt-col">
+                    <div class="txt-col__inner"
+                        <p>this is a lot of text that should scroll while the image to the left is fixed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
      <div id="contact">
-        <div class="container-fluid">
             <div class="container">
-                <h1>Contact</h1>
+                <h2>Contact</h2>
 
                 <div id="thanks" class="collapse alert alert-success alert-dismissible fade" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -170,7 +366,28 @@
                 <!-- I think I'm only allowing myself to toggle the alert with the submit button once...could be why on the second click of the submit button, the form disappears but the alert does not show up.' -->
 
                 <div id="form_container">
-                <form>
+                
+                    <!--<form action="#">
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="text" id="name" pattern="[A-Z,a-z, ]*">
+                        <label class="mdl-textfield__label" for="name">Name</label>
+                        <span class="mdl-textfield__error">letters and spaces only</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="email" id="email">
+                        <label class="mdl-textfield__label" for="name">Email</label>
+                        <span class="mdl-textfield__error">please use a valid email</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield">
+                    <textarea class="mdl-textfield__input" type="text" rows= "4" id="sample5" ></textarea>
+                    <label class="mdl-textfield__label" for="sample5">Message...</label>
+                    </div>
+                    <div>
+                    <button id="submit" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--accent">Send Message</button>
+                    </div>
+                    </form>-->
+
+               <form>
                         <div class="form-group">
                             <input type="text" class="form-control" id="contactName" placeholder="Name">
                         </div>
@@ -183,23 +400,47 @@
                             <textarea class="form-control" rows="4" placeholder="Message"></textarea>
                     </div>
 
-                            <button id="submit" type="submit" class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#thanks">Send Message</button>
+                            <button id="submit" type="submit" class="btn btn-md" data-toggle="collapse" data-target="#thanks">Send Message</button>
                 </form>
                 </div>
+            <div>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+                <p>this will scroll</p>
+            </div>
 
             </div>
-        </div>
+
     </div>
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js" ></script>
+</body>
+
+
+
 <script src="client.js"></script>
 
 <!--
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <script type="text/javascript">
         $('#projects').click(function(){
             $('#about').collapse('show');
@@ -218,9 +459,13 @@
             $('.alert').click(function(){
                 $('form').show();
             });
+
+            
+
+            
     </script>
 
     
 
-  </body>
+  
 </html>
