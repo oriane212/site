@@ -1,18 +1,17 @@
 ![Enter Letters screen](projects/LanguageLearning/imageData/cover.png)
 
 # Personalized Language Learning
-! UX Research + Design case study exploring alternatives to the gamified language learning experience
+UX Case Study | Iterative Research, Design, and Testing
 
-### Background
-! UX Research+Design, Individual Case Study
-This is an individual project I began working on as an apprentice in user experience at Fresh Tilled Soil, a Boston-based digital design agency. 
+## Background
+This is an individual project I began working on as an Apprentice in User Experience at Fresh Tilled Soil, a Boston-based digital design agency. 
 
-### The Challenge
+## Challenge
 While gamified lesson plans are an effective and engaging way to learn for many, I wanted to explore alternatives to this format where material is learned more organically, is more freely and meaningfully associated, and is unique to every learner. 
 
 I chose to design an experience for learning American Sign Language, other than my personal interest in learning it, because I was intrigued by the potential challenges it poses and opportunities it may afford compared to a hands-free, oral language. With American Sign Language is also a rich culture to immerse yourself in and diverse communities of hearing, hard of hearing, and deaf individuals to connect with.
 
-### The Approach
+## Approach
 I approached this project through iterative design sprints consisting of five phases:
  
 * *Understanding* user needs and motivations
@@ -58,6 +57,8 @@ Attempting to measure how well people were remembering signs they had learned us
 
 In addition, this particular usability test would have been much more effective if it were conducted as a field study, which would allow participants to use real rather than simulated moment-of-learning experiences as associations. 
 
+---
+
 ## Sprint 2
 From the feedback, observations, and lessons learned in the first sprint, it only made sense to use this next sprint to test my next set of assumptions out in the real world, testing how people learn new signs and create hints at different times of day and in different types of environments.
 ### Understand
@@ -73,11 +74,11 @@ What if the user is in control of the material she learns based on what she is d
 In learning signs relevant to what is going on in the user's life at that moment, the user no longer needs to rely on adding hints for creating moment-of-learning associations.
 
 ### Converge
-Instead of learning a pre-determined series of signs, the revised key user flow then begins with learning signs that are relevant to the user during that moment-oflearning. 
+Instead of learning a pre-determined series of signs, the revised key user flow then begins with learning signs that are relevant to the user during that moment-of-learning. 
 
 ![Enter Letters screen](projects/LanguageLearning/imageData/coreUserFlow_2.jpg)
 
-This is done by prompting the user to answer questions like "Where are you?", "What are you doing?", or "How do you feel?". 
+This was done by prompting the user to answer questions like "Where are you?", "What are you doing?", or "How do you feel?". 
 
 Adding hints becomes a practical way to help learn new signs in whatever format is most effective - notes, a sketch, image, or other media. 
 
@@ -131,7 +132,7 @@ Incorporating user-generated and app-generated hints in this way was easy for bo
 ![Enter Letters screen](projects/LanguageLearning/imageData/test_Paloma_2.png)
 
 #### Further insight
-Overall, all but one participant were willing to take photos of themselves or their surroundings, particularly in the afternoon at lunchtime. All but one participant developed strategies for taking photos/videos of themselves signing a two-handed sign. In other words, people were able to find a way to accomplish something if they were motivated enough to do so. However, having to prop your phone up against a cup of coffee at the table, or placing your phone temporarily on your lap while on a moving train isn't the best experience.
+All but one participant were willing to take photos of themselves or their surroundings, particularly in the afternoon at lunchtime. All but one participant developed strategies for taking photos/videos of themselves signing a two-handed sign. In other words, people were able to find a way to accomplish something if they were motivated enough to do so. However, having to prop your phone up against a cup of coffee at the table, or placing your phone temporarily on your lap while on a moving train isn't the best experience.
 
 Other interesting findings were:
 
@@ -141,60 +142,45 @@ Other interesting findings were:
 - Participants enjoyed learning their names and seeing their names used throughout the prototype.
 
 
-##### What key findings did I use to inform the next iteration?
-highlight those findings?
-
 ## Sprint 3
 
-### A new core user flow
-
-![Enter Letters screen](projects/LanguageLearning/imageData/coreUserFlow_3.jpg)
-
-### The most important user story
-
+The focus of the final sprint was to build on the exploratory findings of the previous sprints, redefining the core user flow to create a personalized language learning experience for real users.
 
 ### Understand
 
-#### Personas and Empathy Mapping
-Jill, Ben, and a third persona Kate, were shaped from research into who is practicing sign language, what their motivation is to learn/practice ASL, and what their level of proficiency is. 
+I began research into who is practicing sign language, what their motivation is to learn/practice American Sign Language, and what their level of proficiency is. 
 
-A majority of people practicing sign language fell into one of three categories:
+From this research, three key personas and an important user story that connects them emerged: 
 
-1. Hearing with a deaf friend or relative, primarily beginner ASL level. 
-2. Fluent in ASL, interested in making friends, encouraging and supporting anyone interested in strengthening their ASL skills or getting involved in the deaf community, interested in creating a stronger, more diverse deaf culture.
-3. Hard of hearing, looking to maintain ASL skills and stay connected with the deaf community.
-
-These observations developed into the three key personas: 
-
-1. Just Learning Jill
-2. Busy Cousin Ben
-3. Keeps Practicing Kate.
+1. 'Just Learning' Jill (hearing with a deaf friend or relative, and primarily beginner ASL level)
+2. 'Busy Cousin' Ben (deaf, fluent in ASL, interested in making friends, encouraging and supporting anyone interested in strengthening their ASL skills or getting involved in the deaf community, and interested in creating a stronger, more diverse deaf culture)
+3. 'Keeps Practicing' Kate: ()
 
 ![Enter Letters screen](projects/LanguageLearning/imageData/personasEmpathyMaps.png)
 
-#### Experience/Journey Mapping the most important user story
+#### Ben and Jill
 
-Motivations and Pain Points
-Ben is deaf. He lives in New York with his wife and 1-year-old daughter. He frequently shares photos on Facebook and Instagram. 
+Ben is deaf and fluent in ASL. He enjoys making new friends, encourages anyone interested in strengthening their ASL skills, and is actively involved in the deaf community.
 
-His cousin Jill, in California, often comments on his posts in an effort to stay connected. Every so often, Ben and Jill will find time to video chat. Jill is hearing and just beginning to learn American Sign Language in order to connect with Ben and the family more. She is very motivated to learn sign language in order to build a stronger relationship with her cousin. 
+Ben frequently shares photos on Facebook and Instagram. His cousin Jill, in California, often comments on his social media posts in an effort to stay connected. Every so often, Ben and Jill will find time to video chat. 
+
+Jill is hearing and just beginning to learn American Sign Language in order to connect with Ben and the family more. She is very motivated to learn sign language in order to build a stronger relationship with her cousin. 
 
 While video chat enables Jill to learn and practice new signs with Ben as they would in person, she and Ben struggle to have meaningful conversation over what turns into a half hour tutoring session. Infrequent video chatting adds to the struggle, since Jill goes weeks without practice signing with another person. 
 
-Opportunities
-
-Ben and Jill frequently connect through sharing photos. Each time either shares a photo could be an opportunity for Jill to learn new signs and share what she is learning with Ben. With access to media created by users fluent in ASL, Jill could describe the photo she is sharing with Ben using sign language. Having attached various signs to the description of her photo, she is able to review all of the signs she has learned, add notes and/or sketches, and more easily share what she is learning with others.
-
 ![Enter Letters screen](projects/LanguageLearning/imageData/xMap_Ben&Jill.png)
 
-By mapping the flow of interactions between Ben and Jill and their experiences communicating on a daily, weekly, and monthly basis, I was able to pinpoint opportunities for improvement. The key opportunities discovered were:
+In mapping the experience of daily, weekly, and monthly interactions between Ben and Jill, I was able to pinpoint opportunities for addressing specific pain points.
 
-- In their daily communication, the opportunity for Jill to learn new signs every time she or Ben shares a photo. 
-- In their monthly communication, being able to see each other signing in shorter, asynchronous video sessions would be more convenient for Ben’s busy schedule, provide Ben and Jill a way to get face time more often, and give Jill more time to learn new signs and review individually between practicing with Ben. 
+Ben and Jill frequently connect through sharing photos. Each time either shares a photo could be an opportunity for Jill to learn new signs and share what she is learning with Ben. With access to media created by users fluent in American Sign Language, Jill could describe the photo she is sharing with Ben using sign language. Having attached various signs to the description of her photo, she is able to review all of the signs she has learned, add notes and/or sketches, and more easily share what she is learning with others.
+
+#### Kate
+
+Kate is hard of hearing. On a weekly or monthly basis she meets with others to practice ASL and stay connected with the deaf community. Due to limited signing practice, however, she often finds it difficult to establish more meaningful relationships. She needs a way to more easily and more frequently connect with others in the community.
 
 ![Enter Letters screen](projects/LanguageLearning/imageData/xMap_Kate.png)
 
-In mapping Kate's specific flow of interactions when she is at a Meetup and practicing sign language in person, the key opportunities discovered were:
+In mapping Kate's specific flow of interactions when practicing sign language in person, the key opportunities discovered were:
 
 - Kate could have more meaningful conversations if photos were shared.
 - She could more effectively learn new signs while in conversation if she could better capture them to practice later.
@@ -203,6 +189,11 @@ In mapping Kate's specific flow of interactions when she is at a Meetup and prac
 All the different ways the core user flow could be prototyped.
 
 ### Converge
+
+A new core user flow
+
+![Enter Letters screen](projects/LanguageLearning/imageData/coreUserFlow_3.jpg)
+
 Beyond just the idea for the core user flow, now the experience designed from that core user flow.
 In addition, on-boarding experience.
 
