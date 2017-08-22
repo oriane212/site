@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Scrabble Cheater</title>
+        <link rel="stylesheet" href="cheater.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div id="display">
+            
+            <div id='navbar'>
+                <div id='navToggle'></div>
+                <div id='letters'></div>
+                <div id='fav'></div>
+            </div>
+
+            <div id='board'>
+            </div>
+
+            <div id='letterMenu' class="modal" role='dialog'>
+                <div class='modal-dialog'>
+                    <div class='modal-content'>
+                        <div class='modal-body'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id='menu'>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type='button' data-toggle='dropdown'><p>Starting with <span class='letter'>letter</span></p> <span class="caret"></span>
+                    </button>
+                    <ul class='dropdown-menu'>
+                        <li class='active'><p>Starting with <span class='letter'>letter</span></p></li>
+                        <li class='disabled'><p>Ending with <span class='letter'>letter</span></p></li>
+                        <li class='disabled'><p>Any containing <span class='letter'>letter</span></p></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type='button' data-toggle='dropdown'><p>4 letter words</p><span class="caret"></span>
+                    </button>
+                    <ul class='dropdown-menu'>
+                        <li class='disabled'><p>2 letter words<p></li>
+                        <li class='disabled'><p>3 letter words</p></li>
+                        <li class='active'><p>4 letter words</p></li>
+                        <li class='disabled'><p>5 letter words</p></li>
+                        <li class='disabled'><p>6+ letter words</p></li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div id='results'>
+                
+            </div>
+
+        </div>
+
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js" ></script>
+    
+    <script src="cheater.js"></script>
+
+    </body>
+
+</html>

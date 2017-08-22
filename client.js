@@ -92,12 +92,12 @@ window.onload = function () {
 
                 //$('#projectNav').append(this.brand);
                 $('#projectNav').append(this.navItems);
-                //$('#project_container').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
+                $('#project_container').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
                 $('#project_col').append(this.projectHTML);
                 
                 //$('#project_container').attr('data-spy','scroll');
                 //$('#project_container').attr('data-target','#projectNav');
-                //$('#project_html').scrollspy({ target: '#projectNav' });
+                $('body').scrollspy({ target: '#projectNav' });
                 
                 //$('#project_html').scrollspy('refresh');
 
@@ -137,9 +137,10 @@ window.onload = function () {
                 
                 //$('#project_html').attr('data-offset','30');
 
-                $('#project_container').scroll(function () {
+                $(window).scroll(function () {
                     console.log("hey it works!!!");
                     
+                    /*
                     this.h2_sections.forEach(function(header){
                         if (isScrolledIntoView($('#'+header).get(0))){
                             $('#'+header+'_link').addClass('active');
@@ -148,7 +149,7 @@ window.onload = function () {
                             $('#'+header+'_link').removeClass('active');
                         }
                     })
-                    
+                    */
                     
                     
                     if ($('#Sprint1_link').attr('class') == 'nav-link active') {
