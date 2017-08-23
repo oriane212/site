@@ -32,10 +32,17 @@
 
     #project_container{
         position:relative;
+        max-width: 900px;
+        display:block;
+        margin: auto;
         /*
         overflow-y: scroll;
         height: 600px;
         */
+    }
+
+    #project_html{
+        margin: 60px;
     }
 
     .featured_section {
@@ -97,81 +104,34 @@
         height: 3px;
     }
 
+    #project_row {
+        margin: 20px;
+    }
+
+    h4 {
+        color: rgba(0,0,0,.6);
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
 
     h2 {
         color: rgba(0,0,0,.6);
+        padding-top: 20px;
+        padding-bottom: 20px;
     } 
+
+    h3 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
         
 
     .sidebar{height:100%;width:200px;background: url('projects/LanguageLearning/imageData/cover.png'), no-repeat, center, cover; position:absolute!important;z-index:2;overflow:auto}
 
     .bgimg {
     background: url('projects/LanguageLearning/imageData/cover.png'), no-repeat, center, cover; min-height:100%;
-
-
     }
 
-    caseStudy_text {
-
-    }
-
-    
-    .two-col-img--scrollable{
-        overflow:hidden;
-        position:relative;
-    }
-    
-    .two-col-img{}
-
-    #scroll{
-        top: auto;
-        left: auto;
-        bottom: auto;
-        right: 0px;
-        margin: 0px;
-        display: block;
-        position: absolute;
-        box-sizing: content-box;
-        width: 50%;
-        height: 100%
-        }
-
-    .imgS{
-        opacity: 1;
-        transform: matrix(1, 0, 0, 1, 0, 0);
-        height: 682px;
-        z-index: 2;
-        position: absolute;
-        margin: auto;
-        top: 0px;
-        left: 0px;
-        bottom: auto;
-        right: auto;
-        box-sizing: border-box;
-    }
-
-    .txt-col {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: 100%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    min-height: 100vh;
-    width: 39%;
-    position: relative;
-    z-index:1;
-}
-
-.txt-col__inner {
-    padding: 50px 0;
-    max-height: 100%;
-}
     
 
     @media only screen and (min-width:993px){
@@ -254,18 +214,18 @@
 
     <!--
         data-spy="scroll" data-target="#projectNav"
+        <div id="projectNav" class="navbar fixed-bottom navbar-light bg-faded">
+            <div id="project_row" class="row">
+                <div id="projectNav" class="nav nav-pills nav-stacked col-sm-4"></div>
+                <div id="project_col" class="col-sm-8"></div>
+            </div>
+
+            </div>
         -->
 
     <div id="project_html">
         <div id="project_container">
-             <div id="projectNav" class="navbar fixed-bottom navbar-light bg-faded">
-
-
-            </div>
-            <div id="project_row" class="row">
-                <div id="empty_col" class="col-sm-6"></div>
-                <div id="project_col" class="col-sm-6"></div>
-            </div>
+            
         </div>
     </div>
 
@@ -353,6 +313,7 @@
     </div>
     -->
 
+<!--
      <div id="contact">
             <div class="container">
                 <h2>Contact</h2>
@@ -364,7 +325,7 @@
                     <strong>Thanks!</strong> Your message was sent.
                 </div>
 
-                <!-- I think I'm only allowing myself to toggle the alert with the submit button once...could be why on the second click of the submit button, the form disappears but the alert does not show up.' -->
+                //I think I'm only allowing myself to toggle the alert with the submit button once...could be why on the second click of the submit button, the form disappears but the alert does not show up.'
 
                 <div id="form_container">
                 
@@ -386,7 +347,7 @@
                     <div>
                     <button id="submit" class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--accent">Send Message</button>
                     </div>
-                    </form>-->
+                    </form>
 
                <form>
                         <div class="form-group">
@@ -408,6 +369,7 @@
             </div>
 
     </div>
+    -->
 
 <!-- jQuery first, then Tether, then Bootstrap JS. -->
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

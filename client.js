@@ -36,10 +36,11 @@ window.onload = function () {
         this.coverImage = $("<div></div>").addClass('featured_img').css({ 'background-image': 'url("' + this.coverImagePath + '")' });
         this.coverImage.addClass('col-xs-12 col-sm-8');
         
-        this.navItems = $('<ul></ul>').addClass('navbar-nav mr-auto mt-2 mt-md-0').attr('id','projectNavItems');
+        //this.navItems = $('<ul></ul>').addClass('navbar-nav mr-auto mt-2 mt-md-0').attr('id','projectNavItems');
 
-        this.brand = $('<a></a>').addClass("navbar-brand").append(this.projectTitleText);
+        //this.brand = $('<a></a>').addClass("navbar-brand").append(this.projectTitleText);
 
+        /*
         //for each img in imageData, create a list and link item
         this.h2_sections = [];
         var that = this;
@@ -57,6 +58,7 @@ window.onload = function () {
             listItem.append(linkItem);
             this.navItems.append(listItem);
         }
+        */
 
         //this.nav = ('<nav></nav>').addClass('navbar fixed-bottom navbar-light bg-faded')
 
@@ -81,23 +83,30 @@ window.onload = function () {
         clickHandler = function (event) {
             //console.log(this);
 
-
+            $('#project_container').empty();
+            $('#project_container').hide();
+            $('#about').fadeOut('slow');
 
             $('#project_covers').fadeOut('slow', function () {
 
-                //
+                
+                
+                $('#project_container').append(this.projectHTML); 
+                window.scrollTo(0, 0);
+                $('#project_container').fadeIn('slow');
+
 
                 //$('#project_col').empty();
                 //$('#projectNav').empty();
 
                 //$('#projectNav').append(this.brand);
-                $('#projectNav').append(this.navItems);
-                $('#project_container').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
-                $('#project_col').append(this.projectHTML);
+                //$('#projectNav').append(this.navItems);
+                //$('#project_container').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
+                //$('#project_col').append(this.projectHTML);
                 
                 //$('#project_container').attr('data-spy','scroll');
                 //$('#project_container').attr('data-target','#projectNav');
-                $('body').scrollspy({ target: '#projectNav' });
+                //$('body').scrollspy({ target: '#projectNav' });
                 
                 //$('#project_html').scrollspy('refresh');
 
@@ -137,10 +146,13 @@ window.onload = function () {
                 
                 //$('#project_html').attr('data-offset','30');
 
+
+
+/*
                 $(window).scroll(function () {
                     console.log("hey it works!!!");
                     
-                    /*
+                    
                     this.h2_sections.forEach(function(header){
                         if (isScrolledIntoView($('#'+header).get(0))){
                             $('#'+header+'_link').addClass('active');
@@ -149,7 +161,7 @@ window.onload = function () {
                             $('#'+header+'_link').removeClass('active');
                         }
                     })
-                    */
+                    
                     
                     
                     if ($('#Sprint1_link').attr('class') == 'nav-link active') {
@@ -168,6 +180,8 @@ window.onload = function () {
 
 
             }.bind(this))
+*/
+
 
             //this.projectHTML.scroll(function(){
             //$("#imgDiv").addClass('responsive');

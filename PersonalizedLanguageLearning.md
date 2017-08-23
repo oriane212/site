@@ -3,6 +3,8 @@
 # Personalized Language Learning
 UX Case Study | Iterative Research, Design, and Testing
 
+---
+
 ## Background
 This is an individual project I began working on as an Apprentice in User Experience at Fresh Tilled Soil, a Boston-based digital design agency. 
 
@@ -141,6 +143,7 @@ Other interesting findings were:
 - Participants had trouble initially learning a sign when presented by more than one person.
 - Participants enjoyed learning their names and seeing their names used throughout the prototype.
 
+---
 
 ## Sprint 3
 
@@ -150,11 +153,7 @@ The focus of the final sprint was to build on the exploratory findings of the pr
 
 I began research into who is practicing sign language, what their motivation is to learn/practice American Sign Language, and what their level of proficiency is. 
 
-From this research, three key personas and an important user story that connects them emerged: 
-
-1. 'Just Learning' Jill (hearing with a deaf friend or relative, and primarily beginner ASL level)
-2. 'Busy Cousin' Ben (deaf, fluent in ASL, interested in making friends, encouraging and supporting anyone interested in strengthening their ASL skills or getting involved in the deaf community, and interested in creating a stronger, more diverse deaf culture)
-3. 'Keeps Practicing' Kate: ()
+From this research, three key personas and an important user story that connects them emerged.
 
 ![Enter Letters screen](projects/LanguageLearning/imageData/personasEmpathyMaps.png)
 
@@ -186,40 +185,33 @@ In mapping Kate's specific flow of interactions when practicing sign language in
 - She could more effectively learn new signs while in conversation if she could better capture them to practice later.
 
 ### Diverge
-All the different ways the core user flow could be prototyped.
+
+How does the core user flow need to evolve to support each of these use cases for these key personas?
+
+How does this inform the core functionality for the app?
 
 ### Converge
 
-A new core user flow
+A new core user flow that begins with the user taking a photo turns any moment a user wants to capture and share with others into a moment of learning. Signs are attached to the photo by adding a short description and hints can be added to each sign. 
 
 ![Enter Letters screen](projects/LanguageLearning/imageData/coreUserFlow_3.jpg)
 
-Beyond just the idea for the core user flow, now the experience designed from that core user flow.
-In addition, on-boarding experience.
+
+### Prototype
+
+Starting in Balsamiq allowed me to create many quick mock ups of the core functionality for the app.  
 
 ![Enter Letters screen](projects/LanguageLearning/imageData/onboardingX.png)
 
-![Enter Letters screen](projects/LanguageLearning/imageData/prototype_3.png)
 
-### Prototype
-Higher fidelity.
+In further developing the best mock up, I wanted to create a more polished prototype without having to decide on every detail of the look and feel yet. This led to a deep dive into learning the detailed guidelines of Google's Material Design, and a hi-fi prototype using this design system.
 
-### Test?
-Plans for if tests happen...they will be tested on people who actually fit one of the personas maybe, and will be more for improving the design of the UX/UI, moving beyond testing core user flow. 
+![Enter Letters screen](projects/LanguageLearning/imageData/Artboard_hifiPrototype.png)
 
-## Reflections on the Process
-
-## Personalizing any language learning experience
-
-### Extracting a template
-[ empty prototype ]
+---
 
 
-Most Important User Story - paragraph story involving *personas with empathy maps*, details from *experience map*.
 
-
-Most important User Story
-What is is and how it was developed from the personas, each persona’s empathy map, and experience mapping the major pain points, motivations, and opportunities.
 
 
 

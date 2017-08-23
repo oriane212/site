@@ -7,442 +7,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>PersonalizedLanguageLearning</title>
 
-
-<style type="text/css">
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote {
-    margin: 0;
-    padding: 0;
-}
-body {
-    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-    color: #737373;
-    background-color: white;
-    margin: 10px 13px 10px 13px;
-}
-table {
-	margin: 10px 0 15px 0;
-	border-collapse: collapse;
-}
-td,th {
-	border: 1px solid #ddd;
-	padding: 3px 10px;
-}
-th {
-	padding: 5px 10px;
-}
-
-a {
-    color: #0069d6;
-}
-a:hover {
-    color: #0050a3;
-    text-decoration: none;
-}
-a img {
-    border: none;
-}
-p {
-    margin-bottom: 9px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: #404040;
-    line-height: 36px;
-}
-h1 {
-    margin-bottom: 18px;
-    font-size: 30px;
-}
-h2 {
-    font-size: 24px;
-}
-h3 {
-    font-size: 18px;
-}
-h4 {
-    font-size: 16px;
-}
-h5 {
-    font-size: 14px;
-}
-h6 {
-    font-size: 13px;
-}
-hr {
-    margin: 0 0 19px;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-}
-blockquote {
-    padding: 13px 13px 21px 15px;
-    margin-bottom: 18px;
-    font-family:georgia,serif;
-    font-style: italic;
-}
-blockquote:before {
-    content:"\201C";
-    font-size:40px;
-    margin-left:-10px;
-    font-family:georgia,serif;
-    color:#eee;
-}
-blockquote p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    margin-bottom: 0;
-    font-style: italic;
-}
-code, pre {
-    font-family: Monaco, Andale Mono, Courier New, monospace;
-}
-code {
-    background-color: #fee9cc;
-    color: rgba(0, 0, 0, 0.75);
-    padding: 1px 3px;
-    font-size: 12px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-pre {
-    display: block;
-    padding: 14px;
-    margin: 0 0 18px;
-    line-height: 16px;
-    font-size: 11px;
-    border: 1px solid #d9d9d9;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-pre code {
-    background-color: #fff;
-    color:#737373;
-    font-size: 11px;
-    padding: 0;
-}
-sup {
-    font-size: 0.83em;
-    vertical-align: super;
-    line-height: 0;
-}
-kbd {
-  display: inline-block;
-  padding: 3px 5px;
-  font-size: 11px;
-  line-height: 10px;
-  color: #555;
-  vertical-align: middle;
-  background-color: #fcfcfc;
-  border: solid 1px #ccc;
-  border-bottom-color: #bbb;
-  border-radius: 3px;
-  box-shadow: inset 0 -1px 0 #bbb;
-}
-* {
-	-webkit-print-color-adjust: exact;
-}
-@media screen and (min-width: 914px) {
-    body {
-        width: 854px;
-        margin:10px auto;
+<style>
+        img{
+        padding-top: 25px;
+        padding-bottom: 35px;
+        position:relative;
+        margin:auto;
+        display:block;
     }
-}
-@media print {
-	body,code,pre code,h1,h2,h3,h4,h5,h6 {
-		color: black;
-	}
-	table, pre {
-		page-break-inside: avoid;
-	}
-}
-</style>
 
-<style type="text/css">
-/**
- * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
- * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
- * @author Tim  Shedor
- */
+    thead {
+        background-color: #d7ccc8;
+        
+    }
 
-code[class*="language-"],
-pre[class*="language-"] {
-	color: black;
-	background: none;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	word-wrap: normal;
-	line-height: 1.5;
+    th{
+        font-weight: normal;
+        padding:10px;
+    }
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+    td {
+        background-color: #EEEEEE;
+        padding:10px;
+    }
+    
+    table {
+        margin: 30px 0px 30px 0px;
+    }
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-/* Code blocks */
-pre[class*="language-"] {
-	position: relative;
-	margin: .5em 0;
-	-webkit-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
-	-moz-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
-	box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
-	border-left: 10px solid #358ccb;
-	background-color: #fdfdfd;
-	background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-	background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-	background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-	background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-	background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-	background-size: 3em 3em;
-	background-origin: content-box;
-	overflow: visible;
-	padding: 0;
-}
-
-code[class*="language"] {
-	max-height: inherit;
-	height: 100%;
-	padding: 0 1em;
-	display: block;
-	overflow: auto;
-}
-
-/* Margin bottom to accomodate shadow */
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background-color: #fdfdfd;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	margin-bottom: 1em;
-}
-
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	position: relative;
-	padding: .2em;
-	-webkit-border-radius: 0.3em;
-	-moz-border-radius: 0.3em;
-	-ms-border-radius: 0.3em;
-	-o-border-radius: 0.3em;
-	border-radius: 0.3em;
-	color: #c92c2c;
-	border: 1px solid rgba(0, 0, 0, 0.1);
-	display: inline;
-	white-space: normal;
-}
-
-pre[class*="language-"]:before,
-pre[class*="language-"]:after {
-	content: '';
-	z-index: -2;
-	display: block;
-	position: absolute;
-	bottom: 0.75em;
-	left: 0.18em;
-	width: 40%;
-	height: 20%;
-	max-height: 13em;
-	-webkit-box-shadow: 0px 13px 8px #979797;
-	-moz-box-shadow: 0px 13px 8px #979797;
-	box-shadow: 0px 13px 8px #979797;
-	-webkit-transform: rotate(-2deg);
-	-moz-transform: rotate(-2deg);
-	-ms-transform: rotate(-2deg);
-	-o-transform: rotate(-2deg);
-	transform: rotate(-2deg);
-}
-
-:not(pre) > code[class*="language-"]:after,
-pre[class*="language-"]:after {
-	right: 0.75em;
-	left: auto;
-	-webkit-transform: rotate(2deg);
-	-moz-transform: rotate(2deg);
-	-ms-transform: rotate(2deg);
-	-o-transform: rotate(2deg);
-	transform: rotate(2deg);
-}
-
-.token.comment,
-.token.block-comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-	color: #7D8B99;
-}
-
-.token.punctuation {
-	color: #5F6364;
-}
-
-.token.property,
-.token.tag,
-.token.boolean,
-.token.number,
-.token.function-name,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	color: #c92c2c;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.function,
-.token.builtin,
-.token.inserted {
-	color: #2f9c0a;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.token.variable {
-	color: #a67f59;
-	background: rgba(255, 255, 255, 0.5);
-}
-
-.token.atrule,
-.token.attr-value,
-.token.keyword,
-.token.class-name {
-	color: #1990b8;
-}
-
-.token.regex,
-.token.important {
-	color: #e90;
-}
-
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: rgba(255, 255, 255, 0.5);
-}
-
-.token.important {
-	font-weight: normal;
-}
-
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-
-.namespace {
-	opacity: .7;
-}
-
-@media screen and (max-width: 767px) {
-	pre[class*="language-"]:before,
-	pre[class*="language-"]:after {
-		bottom: 14px;
-		-webkit-box-shadow: none;
-		-moz-box-shadow: none;
-		box-shadow: none;
-	}
-
-}
-
-/* Plugin styles */
-.token.tab:not(:empty):before,
-.token.cr:before,
-.token.lf:before {
-	color: #e0d7d1;
-}
-
-/* Plugin styles: Line Numbers */
-pre[class*="language-"].line-numbers {
-	padding-left: 0;
-}
-
-pre[class*="language-"].line-numbers code {
-	padding-left: 3.8em;
-}
-
-pre[class*="language-"].line-numbers .line-numbers-rows {
-	left: 0;
-}
-
-/* Plugin styles: Line Highlight */
-pre[class*="language-"][data-line] {
-	padding-top: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-}
-pre[data-line] code {
-	position: relative;
-	padding-left: 4em;
-}
-pre .line-highlight {
-	margin-top: 0;
+    p ol ul{
+    font-size: .85em;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 </style>
-
-<style type="text/css">
-div.prism-show-language {
-	position: relative;
-}
-
-div.prism-show-language > div.prism-show-language-label {
-	color: black;
-	background-color: #CFCFCF;
-	display: inline-block;
-	position: absolute;
-	bottom: auto;
-	left: auto;
-	top: 0;
-	right: 0;
-	width: auto;
-	height: auto;
-	font-size: 0.9em;
-	border-radius: 0 0 0 5px;
-	padding: 0 0.5em;
-	text-shadow: none;
-	z-index: 1;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
-	-webkit-transform: none;
-	-moz-transform: none;
-	-ms-transform: none;
-	-o-transform: none;
-	transform: none;
-}
-</style>
-
 
 </head>
+
 
 <body>
 
@@ -450,20 +51,21 @@ div.prism-show-language > div.prism-show-language-label {
 
 <h1 id="toc_0">Personalized Language Learning</h1>
 
-<p>! UX Research + Design case study exploring alternatives to the gamified language learning experience</p>
+<p>UX Case Study | Iterative Research, Design, and Testing</p>
 
-<h3 id="toc_1">Background</h3>
+<hr>
 
-<p>! UX Research+Design, Individual Case Study
-This is an individual project I began working on as an apprentice in user experience at Fresh Tilled Soil, a Boston-based digital design agency. </p>
+<h2 id="toc_1">Background</h2>
 
-<h3 id="toc_2">The Challenge</h3>
+<p>This is an individual project I began working on as an Apprentice in User Experience at Fresh Tilled Soil, a Boston-based digital design agency. </p>
+
+<h2 id="toc_2">Challenge</h2>
 
 <p>While gamified lesson plans are an effective and engaging way to learn for many, I wanted to explore alternatives to this format where material is learned more organically, is more freely and meaningfully associated, and is unique to every learner. </p>
 
 <p>I chose to design an experience for learning American Sign Language, other than my personal interest in learning it, because I was intrigued by the potential challenges it poses and opportunities it may afford compared to a hands-free, oral language. With American Sign Language is also a rich culture to immerse yourself in and diverse communities of hearing, hard of hearing, and deaf individuals to connect with.</p>
 
-<h3 id="toc_3">The Approach</h3>
+<h2 id="toc_3">Approach</h2>
 
 <p>I approached this project through iterative design sprints consisting of five phases:</p>
 
@@ -523,6 +125,8 @@ This is an individual project I began working on as an apprentice in user experi
 
 <p>In addition, this particular usability test would have been much more effective if it were conducted as a field study, which would allow participants to use real rather than simulated moment-of-learning experiences as associations. </p>
 
+<hr>
+
 <h2 id="toc_13">Sprint 2</h2>
 
 <p>From the feedback, observations, and lessons learned in the first sprint, it only made sense to use this next sprint to test my next set of assumptions out in the real world, testing how people learn new signs and create hints at different times of day and in different types of environments.</p>
@@ -543,11 +147,11 @@ This is an individual project I began working on as an apprentice in user experi
 
 <h3 id="toc_16">Converge</h3>
 
-<p>Instead of learning a pre-determined series of signs, the revised key user flow then begins with learning signs that are relevant to the user during that moment-oflearning. </p>
+<p>Instead of learning a pre-determined series of signs, the revised key user flow then begins with learning signs that are relevant to the user during that moment-of-learning. </p>
 
 <p><img src="projects/LanguageLearning/imageData/coreUserFlow_2.jpg" alt="Enter Letters screen"></p>
 
-<p>This is done by prompting the user to answer questions like <q>Where are you?</q>, <q>What are you doing?</q>, or <q>How do you feel?</q>. </p>
+<p>This was done by prompting the user to answer questions like <q>Where are you?</q>, <q>What are you doing?</q>, or <q>How do you feel?</q>. </p>
 
 <p>Adding hints becomes a practical way to help learn new signs in whatever format is most effective - notes, a sketch, image, or other media. </p>
 
@@ -637,7 +241,7 @@ This is an individual project I began working on as an apprentice in user experi
 
 <h4 id="toc_23">Further insight</h4>
 
-<p>Overall, all but one participant were willing to take photos of themselves or their surroundings, particularly in the afternoon at lunchtime. All but one participant developed strategies for taking photos/videos of themselves signing a two-handed sign. In other words, people were able to find a way to accomplish something if they were motivated enough to do so. However, having to prop your phone up against a cup of coffee at the table, or placing your phone temporarily on your lap while on a moving train isn&#39;t the best experience.</p>
+<p>All but one participant were willing to take photos of themselves or their surroundings, particularly in the afternoon at lunchtime. All but one participant developed strategies for taking photos/videos of themselves signing a two-handed sign. In other words, people were able to find a way to accomplish something if they were motivated enough to do so. However, having to prop your phone up against a cup of coffee at the table, or placing your phone temporarily on your lap while on a moving train isn&#39;t the best experience.</p>
 
 <p>Other interesting findings were:</p>
 
@@ -648,116 +252,74 @@ This is an individual project I began working on as an apprentice in user experi
 <li>Participants enjoyed learning their names and seeing their names used throughout the prototype.</li>
 </ul>
 
-<h5 id="toc_24">What key findings did I use to inform the next iteration?</h5>
+<hr>
 
-<p>highlight those findings?</p>
+<h2 id="toc_24">Sprint 3</h2>
 
-<h2 id="toc_25">Sprint 3</h2>
+<p>The focus of the final sprint was to build on the exploratory findings of the previous sprints, redefining the core user flow to create a personalized language learning experience for real users.</p>
 
-<h3 id="toc_26">A new core user flow</h3>
+<h3 id="toc_25">Understand</h3>
 
-<p><img src="projects/LanguageLearning/imageData/coreUserFlow_3.jpg" alt="Enter Letters screen"></p>
+<p>I began research into who is practicing sign language, what their motivation is to learn/practice American Sign Language, and what their level of proficiency is. </p>
 
-<h3 id="toc_27">The most important user story</h3>
-
-<h3 id="toc_28">Understand</h3>
-
-<h4 id="toc_29">Personas and Empathy Mapping</h4>
-
-<p>Jill, Ben, and a third persona Kate, were shaped from research into who is practicing sign language, what their motivation is to learn/practice ASL, and what their level of proficiency is. </p>
-
-<p>A majority of people practicing sign language fell into one of three categories:</p>
-
-<ol>
-<li>Hearing with a deaf friend or relative, primarily beginner ASL level. </li>
-<li>Fluent in ASL, interested in making friends, encouraging and supporting anyone interested in strengthening their ASL skills or getting involved in the deaf community, interested in creating a stronger, more diverse deaf culture.</li>
-<li>Hard of hearing, looking to maintain ASL skills and stay connected with the deaf community.</li>
-</ol>
-
-<p>These observations developed into the three key personas: </p>
-
-<ol>
-<li>Just Learning Jill</li>
-<li>Busy Cousin Ben</li>
-<li>Keeps Practicing Kate.</li>
-</ol>
+<p>From this research, three key personas and an important user story that connects them emerged.</p>
 
 <p><img src="projects/LanguageLearning/imageData/personasEmpathyMaps.png" alt="Enter Letters screen"></p>
 
-<h4 id="toc_30">Experience/Journey Mapping the most important user story</h4>
+<h4 id="toc_26">Ben and Jill</h4>
 
-<p>Motivations and Pain Points
-Ben is deaf. He lives in New York with his wife and 1-year-old daughter. He frequently shares photos on Facebook and Instagram. </p>
+<p>Ben is deaf and fluent in ASL. He enjoys making new friends, encourages anyone interested in strengthening their ASL skills, and is actively involved in the deaf community.</p>
 
-<p>His cousin Jill, in California, often comments on his posts in an effort to stay connected. Every so often, Ben and Jill will find time to video chat. Jill is hearing and just beginning to learn American Sign Language in order to connect with Ben and the family more. She is very motivated to learn sign language in order to build a stronger relationship with her cousin. </p>
+<p>Ben frequently shares photos on Facebook and Instagram. His cousin Jill, in California, often comments on his social media posts in an effort to stay connected. Every so often, Ben and Jill will find time to video chat. </p>
+
+<p>Jill is hearing and just beginning to learn American Sign Language in order to connect with Ben and the family more. She is very motivated to learn sign language in order to build a stronger relationship with her cousin. </p>
 
 <p>While video chat enables Jill to learn and practice new signs with Ben as they would in person, she and Ben struggle to have meaningful conversation over what turns into a half hour tutoring session. Infrequent video chatting adds to the struggle, since Jill goes weeks without practice signing with another person. </p>
 
-<p>Opportunities</p>
-
-<p>Ben and Jill frequently connect through sharing photos. Each time either shares a photo could be an opportunity for Jill to learn new signs and share what she is learning with Ben. With access to media created by users fluent in ASL, Jill could describe the photo she is sharing with Ben using sign language. Having attached various signs to the description of her photo, she is able to review all of the signs she has learned, add notes and/or sketches, and more easily share what she is learning with others.</p>
-
 <p><img src="projects/LanguageLearning/imageData/xMap_Ben&amp;Jill.png" alt="Enter Letters screen"></p>
 
-<p>By mapping the flow of interactions between Ben and Jill and their experiences communicating on a daily, weekly, and monthly basis, I was able to pinpoint opportunities for improvement. The key opportunities discovered were:</p>
+<p>In mapping the experience of daily, weekly, and monthly interactions between Ben and Jill, I was able to pinpoint opportunities for addressing specific pain points.</p>
 
-<ul>
-<li>In their daily communication, the opportunity for Jill to learn new signs every time she or Ben shares a photo. </li>
-<li>In their monthly communication, being able to see each other signing in shorter, asynchronous video sessions would be more convenient for Ben’s busy schedule, provide Ben and Jill a way to get face time more often, and give Jill more time to learn new signs and review individually between practicing with Ben. </li>
-</ul>
+<p>Ben and Jill frequently connect through sharing photos. Each time either shares a photo could be an opportunity for Jill to learn new signs and share what she is learning with Ben. With access to media created by users fluent in American Sign Language, Jill could describe the photo she is sharing with Ben using sign language. Having attached various signs to the description of her photo, she is able to review all of the signs she has learned, add notes and/or sketches, and more easily share what she is learning with others.</p>
+
+<h4 id="toc_27">Kate</h4>
+
+<p>Kate is hard of hearing. On a weekly or monthly basis she meets with others to practice ASL and stay connected with the deaf community. Due to limited signing practice, however, she often finds it difficult to establish more meaningful relationships. She needs a way to more easily and more frequently connect with others in the community.</p>
 
 <p><img src="projects/LanguageLearning/imageData/xMap_Kate.png" alt="Enter Letters screen"></p>
 
-<p>In mapping Kate&#39;s specific flow of interactions when she is at a Meetup and practicing sign language in person, the key opportunities discovered were:</p>
+<p>In mapping Kate&#39;s specific flow of interactions when practicing sign language in person, the key opportunities discovered were:</p>
 
 <ul>
 <li>Kate could have more meaningful conversations if photos were shared.</li>
 <li>She could more effectively learn new signs while in conversation if she could better capture them to practice later.</li>
 </ul>
 
-<h3 id="toc_31">Diverge</h3>
+<h3 id="toc_28">Diverge</h3>
 
-<p>All the different ways the core user flow could be prototyped.</p>
+<p>How does the core user flow need to evolve to support each of these use cases for these key personas?</p>
 
-<h3 id="toc_32">Converge</h3>
+<p>How does this inform the core functionality for the app?</p>
 
-<p>Beyond just the idea for the core user flow, now the experience designed from that core user flow.
-In addition, on-boarding experience.</p>
+<h3 id="toc_29">Converge</h3>
+
+<p>A new core user flow that begins with the user taking a photo turns any moment a user wants to capture and share with others into a moment of learning. Signs are attached to the photo by adding a short description and hints can be added to each sign. </p>
+
+<p><img src="projects/LanguageLearning/imageData/coreUserFlow_3.jpg" alt="Enter Letters screen"></p>
+
+<h3 id="toc_30">Prototype</h3>
+
+<p>Starting in Balsamiq allowed me to create many quick mock ups of the core functionality for the app.  </p>
 
 <p><img src="projects/LanguageLearning/imageData/onboardingX.png" alt="Enter Letters screen"></p>
 
-<p><img src="projects/LanguageLearning/imageData/prototype_3.png" alt="Enter Letters screen"></p>
+<p>In further developing the best mock up, I wanted to create a more polished prototype without having to decide on every detail of the look and feel yet. This led to a deep dive into learning the detailed guidelines of Google&#39;s Material Design, and a hi-fi prototype using this design system.</p>
 
-<h3 id="toc_33">Prototype</h3>
+<p><img src="projects/LanguageLearning/imageData/Artboard_hifiPrototype.png" alt="Enter Letters screen"></p>
 
-<p>Higher fidelity.</p>
-
-<h3 id="toc_34">Test?</h3>
-
-<p>Plans for if tests happen...they will be tested on people who actually fit one of the personas maybe, and will be more for improving the design of the UX/UI, moving beyond testing core user flow. </p>
-
-<h2 id="toc_35">Reflections on the Process</h2>
-
-<h2 id="toc_36">Personalizing any language learning experience</h2>
-
-<h3 id="toc_37">Extracting a template</h3>
-
-<p>[ empty prototype ]</p>
-
-<p>Most Important User Story - paragraph story involving <em>personas with empathy maps</em>, details from <em>experience map</em>.</p>
-
-<p>Most important User Story
-What is is and how it was developed from the personas, each persona’s empathy map, and experience mapping the major pain points, motivations, and opportunities.</p>
+<hr>
 
 
-
-<script type="text/javascript">
-var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
-</script>
-
-<script type="text/javascript">
-!function(){if("undefined"!=typeof self&&self.Prism&&self.document){var e={html:"HTML",xml:"XML",svg:"SVG",mathml:"MathML",css:"CSS",clike:"C-like",javascript:"JavaScript",abap:"ABAP",actionscript:"ActionScript",apacheconf:"Apache Configuration",apl:"APL",applescript:"AppleScript",asciidoc:"AsciiDoc",aspnet:"ASP.NET (C#)",autoit:"AutoIt",autohotkey:"AutoHotkey",basic:"BASIC",csharp:"C#",cpp:"C++",coffeescript:"CoffeeScript","css-extras":"CSS Extras",fsharp:"F#",glsl:"GLSL",http:"HTTP",inform7:"Inform 7",json:"JSON",latex:"LaTeX",lolcode:"LOLCODE",matlab:"MATLAB",mel:"MEL",nasm:"NASM",nginx:"nginx",nsis:"NSIS",objectivec:"Objective-C",ocaml:"OCaml",parigp:"PARI/GP",php:"PHP","php-extras":"PHP Extras",powershell:"PowerShell",jsx:"React JSX",rest:"reST (reStructuredText)",sas:"SAS",sass:"Sass (Sass)",scss:"Sass (Scss)",sql:"SQL",typescript:"TypeScript",vhdl:"VHDL",vim:"vim",wiki:"Wiki markup",yaml:"YAML"};Prism.hooks.add("before-highlight",function(s){var a=s.element.parentNode;if(a&&/pre/i.test(a.nodeName)){var t,i,r=a.getAttribute("data-language")||e[s.language]||s.language.substring(0,1).toUpperCase()+s.language.substring(1),l=a.previousSibling;l&&/\s*\bprism-show-language\b\s*/.test(l.className)&&l.firstChild&&/\s*\bprism-show-language-label\b\s*/.test(l.firstChild.className)?i=l.firstChild:(t=document.createElement("div"),i=document.createElement("div"),i.className="prism-show-language-label",t.className="prism-show-language",t.appendChild(i),a.parentNode.insertBefore(t,a)),i.innerHTML=r}})}}();
-</script>
 
 
 </body>
