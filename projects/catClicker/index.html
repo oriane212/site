@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            .active{
+                background-color: #EEEEEE;
+            }
+            body{
+                position:relative;
+                max-width:1200px;
+                min-width: 575px;
+            }
+            .catDisplay{
+                margin: 18px 18px 18px 0px;
+                max-width:75%;
+                margin-left:15px;
+            }
+            #catClicker{
+                float:right;
+                width:70%;
+            }
+            .catName {
+                display: inline;
+                font-size: 1.125em;
+            }
+            .catStats{
+                padding: 10px;
+                background-color: #EEEEEE;
+                font-family:helvetica;
+                color: darkslategrey;
+            }
+            .clicks {
+                display: inline;
+                padding-right: 6px;
+                font-size: 1.125em;
+                font-weight: bold;
+            }
+            .counter{
+                display: inline;
+                float:right;
+            }
+            .clickUnit{
+                display: inline;
+                font-size: .85em;
+            }
+            img {
+                max-width:100%;
+            }
+            li:hover:not(.active){
+                font-weight:bold;
+            }
+            .nav li {
+                display:block;
+                padding:15px;
+                font-family: helvetica;
+                color: darkslategrey;
+                font-size: .95em;
+                text-align:center;
+            }
+            ul{
+                margin-top:18px;
+                width:30%;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="nav">
+        </ul>
+        <div id="catClicker">
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            //dictionary of cat pictures by cat name
+            //does not know how to handle repeat cat names yet!
+            var cats = {
+                'Tux and Saturn' : 'Tux&Sat.jpg',
+                'Chao Yun' : 'ChaoYun.jpg',
+                'Harry' : 'Harry.jpg',
+                'Baxter' : 'Baxter.jpg',
+                'Lady' : 'Lady.jpg',
+                'Snow Ball' : 'Snowball.jpg'
+            };
+            //dictionary of cat displays by listID
+            var cat_displays = {};
+            //for each cat in the dictionary, create elements for cat display, add display to cat_displays dictionary, and add nav items to the DOM
+            for (var cat in cats){
+                //create IDs containing cat name with no spaces
+                var catID = cat.replace(/ /g,"_");
+                var listID = catID + '_li';
+                //elements
+                var listItem = $('<li></li>').attr('id',listID).html(cat);
+                var img = $('<img>').attr('src',cats[cat]);
+                var catName = $('<p></p>').html(cat).addClass('catName');
+                var clicks = $('<p></p>').html('0').addClass('clicks');
+                var clickUnit = $('<p></p>').addClass('clickUnit').html("clicks");
+                var counter = $('<div></div>').addClass('counter').append(clicks,clickUnit);
+                var catStats = $('<div></div>').addClass('catStats').append(catName,counter);
+                var catDisplay = $('<div></div>').addClass('catDisplay').attr('id',catID).append(img, catStats);
+                //add root element to 
+                cat_displays[listID] = catDisplay;
+                //append list item in nav to DOM
+                $('.nav').append(listItem);
+                
+            }
+
+            //function for showing cat display
+            function showCat(item){
+                $('li').removeClass('active');
+                item.addClass('active');
+                var listID = item.attr('id');
+                var catDisplay = cat_displays[listID];
+                $('#catClicker').empty();
+                $('#catClicker').append(catDisplay);
+
+                //updates the number of clicks each time a cat picture is clicked
+                $('img').click(function(){
+                    var cat = $(this).parent('div');
+                    var clicks = cat.find('.clicks');
+                    var click_count = Number(clicks.html());
+                    var clickUnit = cat.find('.clickUnit');
+                    click_count += 1;
+                    clicks.html(click_count);
+                    if (click_count == 1){
+                        clickUnit.html('click');
+                    }
+                    else {
+                        clickUnit.html('clicks');
+                    }
+                })
+            }
+
+            //show the first cat clicker in the list
+            var liFirst = $('li:first');
+            showCat(liFirst);
+
+            //show cat clicker when cat name is clicked
+            $('li').click(function(){
+                var liItem = $(this);
+                showCat(liItem);
+            });
+                
+        </script>
+    </body>
+</html>
+
+

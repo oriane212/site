@@ -1,0 +1,64 @@
+/* Styles for Cat Clicker Premium */
+            * {
+                box-sizing: border-box;
+            }
+            .active{
+                background-color: #EEEEEE;
+            }
+            body{
+                position:relative;
+                max-width:1200px;
+                min-width: 575px;
+            }
+            .catDisplay{
+                margin: 18px 18px 18px 0px;
+                max-width:75%;
+                margin-left:15px;
+            }
+            #catClicker{
+                float:right;
+                width:70%;
+            }
+            .catName {
+                display: inline;
+                font-size: 1.125em;
+            }
+            .catStats{
+                padding: 10px;
+                background-color: #EEEEEE;
+                font-family:helvetica;
+                color: darkslategrey;
+            }
+            .clicks {
+                display: inline;
+                padding-right: 6px;
+                font-size: 1.125em;
+                font-weight: bold;
+            }
+            .counter{
+                display: inline;
+                float:right;
+            }
+            .clickUnit{
+                display: inline;
+                font-size: .85em;
+            }
+            img {
+                max-width:100%;
+            }
+            li:hover:not(.active){
+                font-weight:bold;
+            }
+            .nav li {
+                display:block;
+                padding:15px;
+                font-family: helvetica;
+                color: darkslategrey;
+                font-size: .95em;
+                text-align:center;
+            }
+            ul{
+                margin-top:18px;
+                width:30%;
+                float: left;
+            }

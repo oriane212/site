@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Cat Clicker Premium</title>
+        <link rel="stylesheet" href="catClicker.css">
+
+<style>
+    * {
+                box-sizing: border-box;
+            }
+            .active{
+                background-color: #EEEEEE;
+            }
+            body{
+                position:relative;
+                max-width:1200px;
+                min-width: 575px;
+            }
+            .catDisplay{
+                margin: 18px 18px 18px 0px;
+                max-width:75%;
+                margin-left:15px;
+            }
+            #catClicker{
+                float:right;
+                width:70%;
+            }
+            .catName {
+                display: inline;
+                font-size: 1.125em;
+            }
+            .catStats{
+                padding: 10px;
+                background-color: #EEEEEE;
+                font-family:helvetica;
+                color: darkslategrey;
+            }
+            .clicks {
+                display: inline;
+                padding-right: 6px;
+                font-size: 1.125em;
+                font-weight: bold;
+            }
+            .counter{
+                display: inline;
+                float:right;
+            }
+            .clickUnit{
+                display: inline;
+                font-size: .85em;
+            }
+            img {
+                max-width:100%;
+            }
+            .catnav li:hover:not(.active){
+                font-weight:bold;
+            }
+            .catnav li {
+                display:block;
+                padding:15px;
+                font-family: helvetica;
+                color: darkslategrey;
+                font-size: .95em;
+                text-align:center;
+            }
+            ul{
+                margin-top:18px;
+                width:30%;
+                float: left;
+            }
+    </style>
+
+        </head>
+    <body>
+        <h1>Cat Clicker Premium</h1>
+        <p> Web Application</p>
+        <!--VIEW 1-->
+        <ul class="catnav">
+        </ul>
+       <!--VIEW 2-->
+        <div id="catClicker">
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <!--
+            <script src="catClicker.js"></script>
+            -->
+
+        <script>
+
+var cats = {
+                'Tux and Saturn' : 'projects/catClicker/imageData/Tux&Sat.jpg',
+                'Chao Yun' : 'projects/catClicker/imageData/ChaoYun.jpg',
+                'Harry' : 'projects/catClicker/imageData/Harry.jpg',
+                'Baxter' : 'projects/catClicker/imageData/Baxter.jpg',
+                'Lady' : 'projects/catClicker/imageData/Lady.jpg',
+                'Snow Ball' : 'projects/catClicker/imageData/Snowball.jpg'
+            };
+
+$(function(){
+    // MODEL
+    var model = {
+        //initialize an object for storing cat objects
+        catObjs: {},
+        //cat constructor
+        Cat: function Cat(name) {
+            this.name = name;
+            this.url = cats[name];
+            this.click_count = 0;
+        },
+        init: function(){
+            //create new cat object for each cat in the dictionary
+            for (cat in cats){
+                var ID = cat.replace(/ /g,"_");
+                this.catObjs[ID] = new this.Cat(cat);
+            }
+        },
+        //gets the latest version of data for all cat objects 
+        all_catData: function(){
+            return this.catObjs; 
+        },
+        //gets object data for a cat by ID
+        catData: function(ID){
+            var all_cats = model.all_catData();
+            return all_cats[ID];
+        },
+        //updates click_count property for a cat
+        clicks: function(ID){
+            var cat_data = model.catData(ID);
+            var clicks = cat_data.click_count;
+            clicks += 1;
+            cat_data.click_count = clicks;
+            return clicks;
+        }
+    };
+
+    // OCTOPUS: messenger between the model and the views
+    var octopus = {
+        //triggers initialize functions for the model and the views
+        init: function(){
+            model.init();
+            listview.init();
+            catview.init();
+        },
+        //triggers getting object data for a cat object in the model by ID
+        get_catData: function(ID){
+            return model.catData(ID);
+        },
+        //triggers getting the latest version of data for all cat objects in the model
+        get_all_catData: function(){
+            return model.all_catData();
+        },
+        //triggers update to click_count property for cat in the model
+        updateClicks: function(ID){
+            return model.clicks(ID);
+        }
+    };
+
+    //VIEW 1: navigation
+    var listview = {
+        init: function(){
+            //get all cat objects from the model (via octopus)
+            var all_cat_data = octopus.get_all_catData();
+            //list each cat in the DOM
+            for (cat_by_ID in all_cat_data){
+                var name = all_cat_data[cat_by_ID].name;
+                var listItem = $('<li></li>').attr('id',cat_by_ID).html(name);
+                $('.catnav').append(listItem);
+            }
+            //when list item is clicked, update the list and trigger an update to cat display
+            $('li').click(function(){
+                $('li').removeClass('active');
+                $(this).addClass('active');
+                var listID = $(this).attr('id');
+                catview.render(listID);
+            })
+        }
+    };
+
+    //VIEW 2: cat display
+    var catview = {
+        init: function(){
+            var liFirst = $('li:first');
+            var firstItem_ID = liFirst.attr('id');
+            catview.render(firstItem_ID);
+        },
+        render: function(ID){
+            //convert HTML ID string to cat ID string
+            var catID = ID.replace(/#/g,"");
+            //get cat object from the model (via octopus)
+            var cat_data = octopus.get_catData(catID);
+            //extract and store cat obj data
+            var name = cat_data.name;
+            var url = cat_data.url;
+            var click_count = cat_data.click_count;
+            //elements containing cat data
+            var catName = $('<p></p>').html(name).addClass('catName');
+            var img = $('<img>').attr('src',url);
+            var clicks = $('<p></p>').html(click_count).addClass('clicks');
+            //containers for elements
+            var clickUnit = $('<p></p>').addClass('clickUnit').html("clicks");
+            var counter = $('<div></div>').addClass('counter').append(clicks,clickUnit);
+            var catStats = $('<div></div>').addClass('catStats').append(catName,counter);
+            var catDisplay = $('<div></div>').addClass('catDisplay').append(img, catStats);
+            //update cat display
+            $('#catClicker').fadeOut('fast',function(){
+                $('#catClicker').empty();
+                $('#catClicker').append(catDisplay);
+                $('#catClicker').fadeIn('fast');
+            })
+            //update counter when cat image is clicked
+            img.click(function(){
+                //update click count for cat object in the model (via octopus)
+                var click_count_updated = octopus.updateClicks(ID);
+                //update counter element in the DOM
+                clicks.html(click_count_updated);
+                if (click_count_updated == 1){
+                        clickUnit.html('click');
+                    }
+                    else {
+                        clickUnit.html('clicks');
+                    }
+            })
+        }
+
+    };
+
+octopus.init();
+
+});
+
+        </script>
+
+    </body>
+</html>
