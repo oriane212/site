@@ -7,6 +7,7 @@
     <title>Bootstrap Projects</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -124,6 +125,10 @@
         padding-top: 15px;
         padding-bottom: 15px;
     }
+
+   .fa{
+       font-size:18px;
+   }
         
 
     .sidebar{height:100%;width:200px;background: url('projects/LanguageLearning/imageData/cover.png'), no-repeat, center, cover; position:absolute!important;z-index:2;overflow:auto}
@@ -187,6 +192,7 @@
 
   <body>
     <nav id="top_nav" class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
+        
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#links" aria-controls="links" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -198,6 +204,22 @@
                 <li id="aboutLink" class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li id="contactLink" class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
+            <hr>
+            <ul class='navbar-nav' id='social'>
+            
+            <li class='nav-item'>
+                <a class='nav-link' href='behance.net/oriane'>
+                <i class="fa fa-behance" ></i>
+                </a>
+            </li>
+            <li class='nav-item'>
+            <a class='nav-link' href='github.com/oriane212'><i class="fa fa-github"></i></a>
+            </li>
+            <li class='nav-item'>
+            <a class='nav-link' href='https://www.linkedin.com/in/oriane-daley-a92b2415'><i class="fa fa-linkedin"></i></a>
+            </li>
+            </ul>
+            
         </div>
     </nav>
 
@@ -394,7 +416,7 @@
         $('#projects').click(function(){
                 $('#about').hide();
             });
-        </script>-->
+        </script>
 
 <script type="text/javascript">
             
@@ -409,7 +431,7 @@
 
             
     </script>
-
+-->
     
 
   

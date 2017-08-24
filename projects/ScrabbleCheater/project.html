@@ -44,7 +44,7 @@ p{
     color: rgba(0,0,0,.87);
 }
 
-button{
+button:not(.navbar-toggler){
     width: 175px;
     height: 46px;
     background-color:#EEEEEE;
@@ -114,7 +114,7 @@ td:hover:not(.word) {
 }
 
 .modal-content{
-    display: none;
+    /*display: none;*/
     position: relative;
     background-color: #f9f9f9;
     min-width: 160px;
@@ -197,7 +197,7 @@ ul.dropdown-menu{
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12), 0 0 8px 0 rgba(0, 0, 0, 0.24);
 }
 
-li {
+li:not(.nav-item) {
     padding-left:10px;
     font-size: .9em;
     padding-top:6px;
@@ -256,7 +256,7 @@ li {
             <div id='letterMenu' class="modal" role='dialog'>
                 <div class='modal-dialog'>
                     <div class='modal-content'>
-                        <div class='modal-body'>
+                            <div class='modal-body'>
                         </div>
                     </div>
                 </div>
@@ -294,11 +294,12 @@ li {
     <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     -->
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <!-- jQuery first, then Tether, then Bootstrap JS. 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.js" ></script>
-    
+    -->
+
     <!--
     <script src="cheater.js"></script>
     -->
