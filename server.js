@@ -71,6 +71,9 @@ var server = http.createServer(function(req, res) {
     if (imgDict[req.url] != null){
         res.write(imgDict[req.url]);
     }
+    else if (req.url == "/profilepic1.jpg") {
+        res.write(fs.readFileSync('./profilepic1.jpg'));
+    }
     else if (req.url == "/projects") {
         res.write(JSON.stringify(projects));
     }

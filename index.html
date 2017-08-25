@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap Projects</title>
+    <title>Oriane Daley</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
     <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -26,14 +26,17 @@
         background-color:darkgrey;
         display: none;
     }
-    #about {background-color: #eceff1}
+    #about {background-color: #efebe9}
     /* 
     img {padding-bottom:30px;}
     */
 
+    .row{
+        max-width: 1170px;
+    }
+
     #project_container{
         position:relative;
-        max-width: 900px;
         display:block;
         margin: auto;
         /*
@@ -43,27 +46,29 @@
     }
 
     #project_html{
-        margin: 60px;
+        max-width: 900px;
     }
 
     .featured_section {
         padding-right:20px;
         /*background-color:#efebe9;
-        margin: 12px;*/
-        margin-top:16px;
-        margin-bottom:16px;
+        margin: 12px;
+        padding-top:96px;
+        padding-bottom:96px;
+        */
         }
 
         /* ADD HOVER EFFECTS */
 
     .featured_img {
         width:100%; 
-        height:400px; /*background-image:url("projects/LanguageLearning/imageData/cover.png");*/ 
+        /* height:600px; background-image:url("projects/LanguageLearning/imageData/cover.png");*/ 
         background-size:cover;
         }
 
     .featured_text{
-        padding-top:60px;
+        padding-top: 150px;
+        padding-left: 40px;
        }
 
     .container{text-align:center; padding-top:15px; padding-bottom:15px; }
@@ -109,6 +114,8 @@
         margin: 20px;
     }
 
+    
+    
     h4 {
         color: rgba(0,0,0,.6);
         padding-top: 15px;
@@ -130,6 +137,10 @@
        font-size:18px;
    }
         
+   #skills{
+        text-align:left;
+        font-size: .85em;
+   }
 
     .sidebar{height:100%;width:200px;background: url('projects/LanguageLearning/imageData/cover.png'), no-repeat, center, cover; position:absolute!important;z-index:2;overflow:auto}
 
@@ -146,11 +157,22 @@
         .featured_section:hover {
             opacity:1;
         }
+        .featured_text{
+           padding-top:150px;
+           /* -- also make text smaller */
+       }
     }
 
-    @media only screen and (max-width:992px) {
+    /*
+    @media only screen and (max-width:1600px) {
        .featured_img {
-           height:300px;
+           height:500px;
+       }
+    */
+
+    @media only screen and (min-width:1171px) {
+       .featured_img {
+           height:400px;
        }
        .projectTitle{
            font-size: 14pt;
@@ -158,11 +180,48 @@
        .projectDescription{
            font-size: 10pt;
        }
-    
+    }
+
+    @media only screen and (max-width:1170px) {
+       .featured_img {
+           height:400px;
+       }
+       .projectTitle{
+           font-size: 14pt;
+       }
+       .projectDescription{
+           font-size: 10pt;
+       }
+    }
+
+    @media only screen and (max-width:993px) {
+       .featured_img {
+           height:350px;
+       }
+       .featured_text{
+           padding-top:100px;
+           /* -- also make text smaller */
+       }
+       .projectTitle{
+           padding-bottom:5px;
+           font-size: 12pt;
+       }
+
+       .projectDescription{
+           font-size: 9pt;
+       }
+    }
+
+
+    @media only screen and (max-width:750px) {
+       .featured_img {
+           height:300px;
+       }
+    }
     
     @media only screen and (max-width:575px) {
         .featured_img {
-           height:200px;
+           height:250px;
        }
        .featured_section {
            padding-left:20px;
@@ -171,15 +230,6 @@
        .featured_text{
            padding-top:10px;
            /* -- also make text smaller */
-       }
-
-       .projectTitle{
-           padding-bottom:5px;
-           font-size: 12pt;
-       }
-
-       .projectDescription{
-           font-size: 9pt;
        }
     }
        
@@ -208,12 +258,12 @@
             <ul class='navbar-nav' id='social'>
             
             <li class='nav-item'>
-                <a class='nav-link' href='behance.net/oriane'>
+                <a class='nav-link' href='https://behance.net/oriane'>
                 <i class="fa fa-behance" ></i>
                 </a>
             </li>
             <li class='nav-item'>
-            <a class='nav-link' href='github.com/oriane212'><i class="fa fa-github"></i></a>
+            <a class='nav-link' href='https://github.com/oriane212'><i class="fa fa-github"></i></a>
             </li>
             <li class='nav-item'>
             <a class='nav-link' href='https://www.linkedin.com/in/oriane-daley-a92b2415'><i class="fa fa-linkedin"></i></a>
@@ -306,10 +356,23 @@
 
         <div id="about" class="container-fluid">
             <div class="container">
-                <div class="col-xs-12">
-                <h2>About</h2>
-                <p>test</p>
-               
+                <div class='row'>
+                    <div class="col-sm-6">
+                        <img src='/profilepic1.jpg'>
+                    </div>
+                    <div class="col-sm-6">
+                        <div id='skills'>
+                            <h2>About</h2>
+                            <hr>
+                            <p>I am a human-centered researcher and designer eager to contribute and further develop a strong, diverse set of skills collaborating on projects that have meaningful impact.</p>
+                            <hr>
+                            <p><strong>Methods </strong>| User/stakeholder interviews, contextual inquiry, affinity diagramming, wireframes, low to high fidelity prototypes, guerrilla user testing, use case scenarios, task analyses, journey and empathy mapping, personas, survey design, usability studies, cognitive walkthroughs, heuristic reviews, and competitive analyses.</p>
+                            <p><strong>Applications </strong>| Balsamiq Mockups, Sketch, InVision, Flinto</p>
+                            <p><strong>Languages </strong>| HTML5, CSS3, Javascript</p>
+                            <p><strong>Frameworks </strong>| Bootstrap, jQuery, Node.js</p>
+                            <p><strong>UI Design </strong>| Google Material Design, iOS Human Interface Guidelines</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

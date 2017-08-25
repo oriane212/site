@@ -64,10 +64,21 @@
                 font-size: .95em;
                 text-align:center;
             }
-            ul{
+            .catnav{
                 margin-top:18px;
                 width:30%;
                 float: left;
+            }
+            #instructions{
+                font-size: .85em;
+            }
+            .gallery{
+                display:inline-block;
+                width: 200px;
+                padding-bottom:4px;
+            }
+            #gallery{
+                padding-top:40px;
             }
     </style>
 
@@ -80,10 +91,18 @@
         </ul>
        <!--VIEW 2-->
         <div id="catClicker">
+            <div id='gallery'>
+            <img class='gallery' src='projects/catClicker/imageData/Tux&Sat.jpg'>
+            <img class='gallery' src='projects/catClicker/imageData/ChaoYun.jpg'>
+            <img class='gallery' src='projects/catClicker/imageData/Harry.jpg'>
+            <img class='gallery' src='projects/catClicker/imageData/Baxter.jpg'>
+            <img class='gallery' src='projects/catClicker/imageData/Lady.jpg'>
+            <img class='gallery' src='projects/catClicker/imageData/Snowball.jpg'>
+            </div>
         </div>
-        
+        <!--
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
+        -->
         <!--
             <script src="catClicker.js"></script>
             -->
@@ -116,6 +135,7 @@ $(function(){
                 var ID = cat.replace(/ /g,"_");
                 this.catObjs[ID] = new this.Cat(cat);
             }
+            
         },
         //gets the latest version of data for all cat objects 
         all_catData: function(){

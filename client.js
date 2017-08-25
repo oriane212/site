@@ -9,6 +9,8 @@ function isScrolledIntoView(el) {
     return isVisible;
 };
 
+var background_col = '#eceff1';
+
 window.onload = function () {
 
 
@@ -89,8 +91,8 @@ window.onload = function () {
 
             $('#project_covers').fadeOut('slow', function () {
 
-                
-                
+                $('#project_html').css({'margin':'40px'});
+
                 $('#project_container').append(this.projectHTML); 
                 window.scrollTo(0, 0);
                 $('#project_container').fadeIn('slow');
@@ -227,8 +229,20 @@ window.onload = function () {
 
         this.DOMlayout = function () {
 
+            
+
             //new container for project
             this.featured_section = $('<div></div>').addClass('featured_section').attr('id', this.projectTitleText);
+
+            if (background_col =='#eceff1'){
+                this.featured_section.css({'background-color':background_col});
+                background_col = '#FFFFFF';
+            }
+            else {
+                this.featured_section.css({'background-color':background_col});
+                background_col = '#eceff1';
+            }
+
             //this.a_project = $("<div></div>").addClass('a_project');
             //this.title_description = $('<div></div>').addClass('title_description');
             //this.htmlsection = $('<section></section>').addClass('projectHTML');
@@ -303,6 +317,7 @@ window.onload = function () {
         $('#projects').click(function () {
             $('div .featured_section').removeAttr("style");
             $('#project_html').fadeOut("fast");
+            $('#project_html').css({'margin':'none'});
             $('#project_covers').fadeOut('fast');
 
             //$('.featured_section').show();
