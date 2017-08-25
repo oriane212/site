@@ -37,7 +37,7 @@ window.onload = function () {
 
         this.coverImage = $("<div></div>").addClass('featured_img').css({ 'background-image': 'url("' + this.coverImagePath + '")' });
         this.coverImage.addClass('col-xs-12 col-sm-8');
-        
+
         //this.navItems = $('<ul></ul>').addClass('navbar-nav mr-auto mt-2 mt-md-0').attr('id','projectNavItems');
 
         //this.brand = $('<a></a>').addClass("navbar-brand").append(this.projectTitleText);
@@ -64,14 +64,14 @@ window.onload = function () {
 
         //this.nav = ('<nav></nav>').addClass('navbar fixed-bottom navbar-light bg-faded')
 
-                //item1 = this.projectHTML.children('h3:first').text();
-                //this.projectHTML.children('h3:first').attr('id', item1);
-                //list_item1 = $('<li></li>').addClass('nav-item');
-                //link_item1 = $('<a></a>').addClass('nav-link').attr('href', '#' + item1 + '');
-                //link_item1.attr('id', item1 + '_item');
-                //link_item1.append(item1);
-                //list_item1.append(link_item1);
-                //$('#projectNavLinks').append(list_item1);
+        //item1 = this.projectHTML.children('h3:first').text();
+        //this.projectHTML.children('h3:first').attr('id', item1);
+        //list_item1 = $('<li></li>').addClass('nav-item');
+        //link_item1 = $('<a></a>').addClass('nav-link').attr('href', '#' + item1 + '');
+        //link_item1.attr('id', item1 + '_item');
+        //link_item1.append(item1);
+        //list_item1.append(link_item1);
+        //$('#projectNavLinks').append(list_item1);
 
 
 
@@ -91,12 +91,11 @@ window.onload = function () {
 
             $('#project_covers').fadeOut('slow', function () {
 
-                $('#project_html').css({'margin':'40px'});
+                $('#project_html').css({ 'margin': '40px' });
 
-                $('#project_container').append(this.projectHTML); 
+                $('#project_container').append(this.projectHTML);
                 window.scrollTo(0, 0);
                 $('#project_container').fadeIn('slow');
-
 
                 //$('#project_col').empty();
                 //$('#projectNav').empty();
@@ -105,11 +104,11 @@ window.onload = function () {
                 //$('#projectNav').append(this.navItems);
                 //$('#project_container').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
                 //$('#project_col').append(this.projectHTML);
-                
+
                 //$('#project_container').attr('data-spy','scroll');
                 //$('#project_container').attr('data-target','#projectNav');
                 //$('body').scrollspy({ target: '#projectNav' });
-                
+
                 //$('#project_html').scrollspy('refresh');
 
                 //$('#project_html').empty(); 
@@ -119,7 +118,7 @@ window.onload = function () {
                 //this.projectHTML_inner = $('<div></div>').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
 
                 //this.projectHTML_inner.attr('id','inner');
-                
+
                 //$('#project_html').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
 
 
@@ -131,58 +130,54 @@ window.onload = function () {
 
                 //new: this.projectHTML.addClass('col-sm-6').attr('id', 'project-col');
 
-
-
                 //new: rowDiv = $("<div></div>").addClass('row').attr('id', 'rowDiv').append(imgDiv, this.projectHTML);
-
                 //new: this.projectHTML_inner.append(rowDiv);
-
                 //new: $('#project_html').append(this.projectHTML_inner);
 
+            }.bind(this));
 
 
+
+
+            //$('#project_html').scrollspy('refresh');
+
+            //$('#project_html').attr('data-offset','30');
+
+
+
+            /*
+                            $(window).scroll(function () {
+                                console.log("hey it works!!!");
+                                
+                                
+                                this.h2_sections.forEach(function(header){
+                                    if (isScrolledIntoView($('#'+header).get(0))){
+                                        $('#'+header+'_link').addClass('active');
+                                    }
+                                    else {
+                                        $('#'+header+'_link').removeClass('active');
+                                    }
+                                })
+                                
+                                
+                                
+                                if ($('#Sprint1_link').attr('class') == 'nav-link active') {
+                                    console.log('hey it works');
+                                    $('#project_container').css({ 'background': 'url("/projects/LanguageLearning/imageData/diverge_1.png") no-repeat fixed left', 'background-size': '50% auto' });
             
-                }.bind(this));
-
-                //$('#project_html').scrollspy('refresh');
-                
-                //$('#project_html').attr('data-offset','30');
-
-
-
-/*
-                $(window).scroll(function () {
-                    console.log("hey it works!!!");
-                    
-                    
-                    this.h2_sections.forEach(function(header){
-                        if (isScrolledIntoView($('#'+header).get(0))){
-                            $('#'+header+'_link').addClass('active');
-                        }
-                        else {
-                            $('#'+header+'_link').removeClass('active');
-                        }
-                    })
-                    
-                    
-                    
-                    if ($('#Sprint1_link').attr('class') == 'nav-link active') {
-                        console.log('hey it works');
-                        $('#project_container').css({ 'background': 'url("/projects/LanguageLearning/imageData/diverge_1.png") no-repeat fixed left', 'background-size': '50% auto' });
-
-                        //$('#project_html').attr('background','url("ScreenShot2.png") no-repeat fixed left');
-                    }
-                    else {
-                        console.log($('#Sprint1_link').attr('class'));
-                        $('#project_container').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
-                        }
-
-                
-                //$('#project_html').scrollspy('refresh');
-
-
-            }.bind(this))
-*/
+                                    //$('#project_html').attr('background','url("ScreenShot2.png") no-repeat fixed left');
+                                }
+                                else {
+                                    console.log($('#Sprint1_link').attr('class'));
+                                    $('#project_container').css({ 'background': 'url(" ' + this.coverImagePath + ' ") no-repeat fixed left', 'background-size': '50% auto' });
+                                    }
+            
+                            
+                            //$('#project_html').scrollspy('refresh');
+            
+            
+                        }.bind(this))
+            */
 
 
             //this.projectHTML.scroll(function(){
@@ -229,17 +224,17 @@ window.onload = function () {
 
         this.DOMlayout = function () {
 
-            
+
 
             //new container for project
             this.featured_section = $('<div></div>').addClass('featured_section').attr('id', this.projectTitleText);
 
-            if (background_col =='#eceff1'){
-                this.featured_section.css({'background-color':background_col});
+            if (background_col == '#eceff1') {
+                this.featured_section.css({ 'background-color': background_col });
                 background_col = '#FFFFFF';
             }
             else {
-                this.featured_section.css({'background-color':background_col});
+                this.featured_section.css({ 'background-color': background_col });
                 background_col = '#eceff1';
             }
 
@@ -291,8 +286,19 @@ window.onload = function () {
     }
 
 
+    $('#projects').click(function () {
+        $('#project_container').fadeOut('slow');
+        $('#project_container').empty();
+        $('#project_covers').fadeIn('slow');
+        //$('#about').fadeOut('fast');
+    });
 
-
+    $('#aboutLink').click(function () {
+        $('#project_container').fadeOut('fast');
+        $('#project_container').empty();
+        $('#project_covers').fadeOut('fast');
+        $('#about').fadeIn('slow');
+    });
 
 
     $.get("/projects", function (data, status) {
@@ -303,7 +309,10 @@ window.onload = function () {
             all_DOMlayouts.push(new ProjectElementFromObject(currentProjectObject));
         });
 
+        
+
         $('body').scrollTop(10);
+        
 
         //$('.featured_section').click(function(){
 
@@ -314,6 +323,7 @@ window.onload = function () {
 
         //}
 
+        /*
         $('#projects').click(function () {
             $('div .featured_section').removeAttr("style");
             $('#project_html').fadeOut("fast");
@@ -336,6 +346,7 @@ window.onload = function () {
             $('#project_html').empty();
 
         });
+        */
 
         /*
         $('#projects').click(function(){
