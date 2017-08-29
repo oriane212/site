@@ -37,6 +37,23 @@ li.active {
     background-color: #EEEEEE;
 }
 
+    ol{
+        font-size: .9em;
+        margin-bottom: 40px;
+    }
+    
+    h4 {
+        color: rgba(0,0,0,.6);
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    h2 {
+        color: rgba(0,0,0,.6);
+        padding-top: 20px;
+        padding-bottom: 20px;
+    } 
+
 p{
     font-weight: lighter;
     font-size: .85em;
@@ -239,64 +256,93 @@ li:not(.nav-item) {
     font-weight: lighter;
 }
 
-h1{
-    color: rgba(0,0,0,.6);
+
+
+.useCase {
+    margin-bottom: 10px;
 }
+
     </style>
     
     </head>
 
     <body>
         <h1>Scrabble Cheater</h1>
-        <p>Mobile Application Demo</p>
-        <div id="display">
-            
-            <div id='navbar'>
-                <div id='navToggle'></div>
-                <div id='letters'></div>
-                <div id='fav'></div>
-            </div>
+        <p>Mobile Application</p>
+            <div class='row'>
+            <div class='col-lg-6 col-md-12'>
 
-            <div id='board'>
-            </div>
+                <div id="display">
+                    
+                    <div id='navbar'>
+                        <div id='navToggle'></div>
+                        <div id='letters'></div>
+                        <div id='fav'></div>
+                    </div>
 
-            <div id='letterMenu' class="modal" role='dialog'>
-                    <div class='modal-dialog'>
-                        <div class='modal-content'>
-                                <div class='modal-body'>
+                    <div id='board'>
+                    </div>
+
+                    <div id='letterMenu' class="modal" role='dialog'>
+                            <div class='modal-dialog'>
+                                <div class='modal-content'>
+                                        <div class='modal-body'>
+                                        </div>
                                 </div>
+                            </div>
+                    </div>
+
+                    <div id='menu'>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type='button' data-toggle='dropdown'><p>Starting with <span class='letter'>letter</span></p> <span class="caret"></span>
+                            </button>
+                            <ul class='dropdown-menu'>
+                                <li class='active'><p>Starting with <span class='letter'>letter</span></p></li>
+                                <li class='disabled'><p>Ending with <span class='letter'>letter</span></p></li>
+                                <li class='disabled'><p>Any containing <span class='letter'>letter</span></p></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type='button' data-toggle='dropdown'><p>4 letter words</p><span class="caret"></span>
+                            </button>
+                            <ul class='dropdown-menu'>
+                                <li class='disabled'><p>2 letter words<p></li>
+                                <li class='disabled'><p>3 letter words</p></li>
+                                <li class='active'><p>4 letter words</p></li>
+                                <li class='disabled'><p>5 letter words</p></li>
+                                <li class='disabled'><p>6+ letter words</p></li>
+                            </ul>
                         </div>
                     </div>
-            </div>
-
-            <div id='menu'>
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type='button' data-toggle='dropdown'><p>Starting with <span class='letter'>letter</span></p> <span class="caret"></span>
-                    </button>
-                    <ul class='dropdown-menu'>
-                        <li class='active'><p>Starting with <span class='letter'>letter</span></p></li>
-                        <li class='disabled'><p>Ending with <span class='letter'>letter</span></p></li>
-                        <li class='disabled'><p>Any containing <span class='letter'>letter</span></p></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type='button' data-toggle='dropdown'><p>4 letter words</p><span class="caret"></span>
-                    </button>
-                    <ul class='dropdown-menu'>
-                        <li class='disabled'><p>2 letter words<p></li>
-                        <li class='disabled'><p>3 letter words</p></li>
-                        <li class='active'><p>4 letter words</p></li>
-                        <li class='disabled'><p>5 letter words</p></li>
-                        <li class='disabled'><p>6+ letter words</p></li>
-                    </ul>
-                </div>
-            </div>
-        
-            <div id='results'>
                 
+                    <div id='results'>
+                    </div>
+
+                </div>
+
             </div>
 
-        </div>
+            <div class='col-lg-6 col-md-12'>
+                
+        <h2>Background</h2>
+        <p> Scrabble Cheater is a project I began as a Python tutorial and wanted to recreate with JavaScript. Designing an application with fairly straightforward use cases, my focus as I continue working on this project is to push my programming skills further.</p>
+        <hr>
+        <h2>Demo Use Case Scenario</h2>
+        <p>You are playing a game of Scrabble and see a spot on the board where you could play a 4-letter word starting with 'C'. You want to know 
+            </p>
+        <ol>
+            <li class='useCase'>what 4-letter words starting with 'C' you could make</li>
+            <li class='useCase'>given the selected spot on the board, which of these words scores the highest</li>
+        </ol>
+        <p>To do this using the app, you</p>
+        <ol>
+            <li class='useCase'>select the spot on the board where you want to play</li>
+            <li class='useCase'>select the letter on the board at that spot ('C')</li>
+            <li class='useCase'>use the dropdown menus to filter the results by where the letter 'C' appears in the word and by word length</li>
+        </ol>
+
+            </div>
+            </div>
 
     <!--
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
