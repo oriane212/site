@@ -24,7 +24,7 @@ body {
     color: #FFF;
     text-align: center;
     padding: 14px 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-weight: lighter;
 }
 
@@ -53,14 +53,14 @@ body {
 .projectTitle{
     padding-bottom: 10px;
     text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 18pt;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24pt;
     color: slategray;
 }
 
 .projectDescription{
     text-align: left;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 10pt;
     font-weight: lighter;
     color: darkslategray;
