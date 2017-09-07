@@ -1,6 +1,6 @@
 
 var all_DOMlayouts = [];
-var background_col = '#eceff1';
+var background_col = '#FFFFFF';
 var delayTime = 500;
 
 window.onload = function () {
@@ -57,13 +57,14 @@ window.onload = function () {
             //new container for project
             this.featured_section = $('<div></div>').addClass('featured_section').attr('id', this.projectTitleText);
 
-            if (background_col == '#eceff1') {
+            if (background_col == '#FFFFFF') {
                 this.featured_section.css({ 'background-color': background_col });
                 background_col = '#FFFFFF';
             }
+            
             else {
                 this.featured_section.css({ 'background-color': background_col });
-                background_col = '#eceff1';
+                background_col = '#FFFFFF';
             }
 
 
