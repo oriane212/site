@@ -16,9 +16,9 @@ window.onload = function () {
         $.post('/submit',{name: name, email: email, message: message});
         //feedback
         $('#message_sent').modal();
-        $('#contactName').val('');
+        /*$('#contactName').val('');
         $('#contactEmail').val('');
-        $('#contactMessage').val('');
+        $('#contactMessage').val('');*/
     });
 
 
