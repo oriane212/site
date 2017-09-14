@@ -296,7 +296,7 @@ ul.dropdown-menu{
                                                 <span aria-hidden="true">&times;</span>
                                               </button>
                                             </div>
-                                        <div class='modal-body'>
+                                        <div id='SC_modal-body' class='modal-body'>
                                         </div>
                                 </div>
                             </div>
@@ -639,7 +639,7 @@ $(function(){
                 }
                 letter_div.html(letterUC);
                 menuContainer.append(letter_div);
-                $('.modal-body').append(menuContainer);
+                $('#SC_modal-body').append(menuContainer);
             }
 
         },

@@ -14,6 +14,11 @@ window.onload = function () {
         var message = $('#contactMessage').val();
         //send POST request
         $.post('/submit',{name: name, email: email, message: message});
+        //feedback
+        $('#message_sent').modal();
+        $('#contactName').val('');
+        $('#contactEmail').val('');
+        $('#contactMessage').val('');
     });
 
 
