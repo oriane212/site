@@ -1,24 +1,40 @@
 
 var all_DOMlayouts = [];
 var background_col = '#FFFFFF';
-var delayTime = 500;
+var delayTime = 1000;
+var featureID = '';
+var pHTML_ID = 0;
 
 window.onload = function () {
+
+    //on SUBMIT button click
+    $('#submit').click(function(){
+        var name = $('#contactName').val();
+        var email = $('#contactEmail').val();
+        var message = $('#contactMessage').val();
+        //send POST request
+        $.post('/submit',{name: name, email: email, message: message});
+    });
 
 
     function ProjectElementFromObject(projectObject) {
         // properties storing jQuery objects for title, description, cover image and html from project object
 
-        this.projectHTML = $('<div></div>').html(projectObject.projectHTML);
+        this.projectHTML = $('<div></div>').html(projectObject.projectHTML).css({ 'margin': '40px', 'height':'100%' });
 
         // gets h1 title from projectHTML
         this.projectTitleText = this.projectHTML.children('h1').text();
 
         // puts that title text into a project title div
         this.projectTitle = $('<div></div>').addClass('projectTitle').text(this.projectTitleText);
+        
+        this.f_ID = this.projectTitleText.replace(/ /g,"_");
+
+        this.pHTML_ID = pHTML_ID;
 
         // gets description from projectHTML 
         this.projectDescriptionText = this.projectHTML.children('p:first').text();
+        
 
         // puts that description text into a project description div
         this.projectDescription = $('<div></div>').addClass('projectDescription').text(this.projectDescriptionText);
@@ -32,18 +48,27 @@ window.onload = function () {
         
         
         clickHandler = function (event) {
+            if (featureID.length != 0) {
+                $('#' + featureID).delay(1000).fadeIn('slow');
+            }
 
-            $('#project_container').empty();
-            $('#project_container').hide();
-            $('#about').fadeOut('fast');
+            $('.project_container').fadeOut('slow');
+            
+            //$('project_container').fadeOut('slow');
+            //$('#project_container').empty();
+            //$('#project_container').hide();
+            //$('#about').fadeOut('fast');
 
-            $('#project_covers').fadeOut('slow', function () {
-
-                $('#project_html').css({ 'margin': '40px', 'height':'100%' });
-
-                $('#project_container').append(this.projectHTML);
-                window.scrollTo(0, 0);
-                $('#project_container').fadeIn('slow');
+            //$('#project_covers').fadeOut('slow', function () {
+            
+            this.featured_section.fadeOut('slow', function(){
+                this.projectContainer.fadeIn('slow');
+                featureID = this.featured_section.attr('id');
+                //$('#project_html').css({ 'margin': '40px', 'height':'100%' });
+                $('#'+ this.pHTML_ID).fadeIn('slow');
+                //$('#project_container').append(this.projectHTML);
+                window.scrollTo(0, 700);
+                //$('#project_container').fadeIn('slow');
                 //$('#about').delay(500).fadeIn('slow');
 
 
@@ -55,7 +80,7 @@ window.onload = function () {
         this.DOMlayout = function () {
 
             //new container for project
-            this.featured_section = $('<div></div>').addClass('featured_section').attr('id', this.projectTitleText);
+            this.featured_section = $('<div></div>').addClass('featured_section').attr('id', this.f_ID);
 
             if (background_col == '#FFFFFF') {
                 this.featured_section.css({ 'background-color': background_col });
@@ -80,9 +105,13 @@ window.onload = function () {
 
             $('#project_covers').append(this.featured_section);
 
+            this.projectContainer = $('<div></div>').addClass('project_container').append(this.projectHTML).attr('id', this.pHTML_ID);
+            $('#project_html').append(this.projectContainer);
+
             this.featured_section.delay(delayTime).fadeIn('slow');
             delayTime += 500;
 
+            pHTML_ID += 1;
         }
 
         this.getRoot = function () {
@@ -92,7 +121,7 @@ window.onload = function () {
         this.DOMlayout();
     }
 
-
+/*
     $('#projects').click(function () {
         $('#project_container').fadeOut('slow');
         $('#project_container').empty();
@@ -107,9 +136,14 @@ window.onload = function () {
         //$('#project_covers').fadeOut('fast');
         $('#about').fadeIn('slow');
     });
+*/
     
-
     $('#about').hide();
+    $('#methods').hide();
+    $('#apps').hide();
+    $('#languages').hide();
+    $('#frameworks').hide();
+    $('#contact').hide();
     //$('#project_covers').hide();
 
 
@@ -126,11 +160,15 @@ window.onload = function () {
             $('#about').fadeIn('slow');
         });    
         */    
-
+        $('.project_container').hide();
         $('body').scrollTop(10);
-        $('#about').delay(2000).fadeIn('slow');
-        
-
+        $('#about').delay(500).fadeIn('slow');
+        $('#methods').delay(2000).fadeIn('slow');
+        $('#apps').delay(2000).fadeIn('slow');
+        $('#languages').delay(2000).fadeIn('slow');
+        $('#frameworks').delay(2000).fadeIn('slow');
+        $('#contact').delay(2000).fadeIn('slow');
+    
     });
 
 };

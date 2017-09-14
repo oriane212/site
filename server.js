@@ -1,5 +1,7 @@
 var http = require('http');
 var fs = require('fs');
+var qs = require('querystring');
+var nodemailer = require('nodemailer');
 
 var imgDict = {};
 
@@ -89,7 +91,46 @@ var server = http.createServer(function(req, res) {
     else if (req.url == "/node_modules/@material/button/dist/mdc.button.css"){
         res.write(fs.readFileSync('./node_modules/@material/button/dist/mdc.button.css','utf-8'));
     }
+    else if (req.url == "/submit"){
+        let body = [];
+        let stringbody = '';
+        req.on('data', function(chunk){
+            body.push(chunk);
+        });
+        req.on('end', function(){
+            stringbody = Buffer.concat(body).toString();
+            console.log(stringbody);
+            let jsonBody = qs.parse(stringbody);
+            console.log(jsonBody);
+            //create email
+            var email = {
+                from: process.env.EMAIL_USER,
+                to: process.env.EMAIL_USER,
+                subject: 'New contact form message',
+                text: JSON.stringify(jsonBody)
+              };            
+            //send email using dataFromClient...
+            transporter.sendMail(email, function(error, info){
+                if (error) {
+                  console.log(error);
+                } else {
+                  console.log('Email sent: ' + info.response);
+                }
+              });
+        });
+        
+    }
+
     res.end();
 });
+
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.AUTH_USER,
+      pass: process.env.AUTH_PASS
+    }
+  });
+
 
 server.listen(process.env.PORT || 3000);

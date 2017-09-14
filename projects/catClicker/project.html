@@ -19,23 +19,24 @@
             }
             */
             .catDisplay{
-                margin: 18px 18px 18px 0px;
-                max-width:75%;
-                margin-left:15px;
+                max-width:100%;
             }
+
+            img.cat{
+                padding-bottom: 0px;
+            }
+
             #catClicker{
                 float:right;
-                width:70%;
             }
             .catName {
                 display: inline;
-                font-size: 1.125em;
             }
             .catStats{
                 padding: 10px;
-                background-color: #EEEEEE;
                 font-family:helvetica;
                 color: darkslategrey;
+                text-align: left;
             }
             .clicks {
                 display: inline;
@@ -45,7 +46,7 @@
             }
             .counter{
                 display: inline;
-                float:right;
+                float: right;
             }
             .clickUnit{
                 display: inline;
@@ -61,7 +62,7 @@
             }
             .catnav li {
                 display:block;
-                padding:15px;
+                padding:12px;
                 font-family: helvetica;
                 color: darkslategrey;
                 font-size: .95em;
@@ -69,63 +70,85 @@
             }
             .catnav{
                 margin-top:18px;
-                width:30%;
-                float: left;
-                padding-bottom: 120px;
+                padding-left: 0px;
             }
             #instructions{
                 font-size: .85em;
             }
             .gallery{
                 display:inline-block;
-                width: 200px;
+                width: 35%;
                 padding-bottom:4px;
             }
             #gallery{
-                padding-top:40px;
+                padding-top:0px;
+            }
+            .CC{
+                padding-bottom: 20px;
             }
     </style>
 
         </head>
     <body>
-        <h1>Cat Clicker Premium</h1>
-        <p> Web Application | JavaScript Course Project</p>
-        <hr>
-        <h2>Background</h2>
-        <p>I built Cat Clicker Premium as a course project for <a target="_blank" href='https://www.udacity.com/course/javascript-design-patterns--ud989'>JavaScript Design Patterns (Udacity)</a>. During this project, I learned how to use a MV* organizational framework to better structure my code and more easily update the application with each change in requirements. To see how this project evolved since the first version with requirements for one cat and one click counter, visit <a target="_blank" href='https://github.com/oriane212/catClicker'> my GitHub</a>!</p>
-        <hr>
-        <h2>Project Requirements for Cat Clicker Premium</h2>
-        <h5>Visuals</h5>
-        <p>The application should display</p>
-        <ul>
-            <li>a list of at least 5 cats, listed by name</li>
-            <li>an area to display the selected cat</li>
-        </ul>
-        <p>In the cat display area, the following should be displayed</p>
-         <ul>
-            <li>the cat's name</li>
-            <li>a picture of the cat</li>
-            <li>text showing the number of clicks</li>
-        </ul>
-        <p>The specifics of the layout do not matter, so style it however you'd like.</p>
-        <h5>Interaction</h5>
-        <p>When a cat name is clicked in the list, the cat display area should update to show the data for the selected cat. The number of clicks in the cat area should be unique to each cat, and should increment when the cat's picture is clicked.</p>
-        <hr>
-        <!--VIEW 1-->
-        <ul class="catnav">
-        </ul>
-       <!--VIEW 2-->
-        <div id="catClicker">
-            <div id='gallery'>
-            <img class='gallery' src='projects/catClicker/imageData/Tux&Sat.jpg'>
-            <img class='gallery' src='projects/catClicker/imageData/ChaoYun.jpg'>
-            <img class='gallery' src='projects/catClicker/imageData/Harry.jpg'>
-            <img class='gallery' src='projects/catClicker/imageData/Baxter.jpg'>
-            <img class='gallery' src='projects/catClicker/imageData/Lady.jpg'>
-            <img class='gallery' src='projects/catClicker/imageData/Snowball.jpg'>
+            <h1>Cat Clicker Premium</h1>
+            <p> Web Application | JavaScript Course Project</p>
+            <hr>
+        <div class='container-fluid'>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                            <h2>Background</h2>
+                            <p>I built Cat Clicker Premium as a course project for <a target="_blank" href='https://www.udacity.com/course/javascript-design-patterns--ud989'>JavaScript Design Patterns (Udacity)</a>. During this project, I learned how to use a MV* organizational framework to better structure my code and more easily update the application with each change in requirements. To see how this project evolved since the first version with requirements for one cat and one click counter, visit <a target="_blank" href='https://github.com/oriane212/catClicker'> my GitHub</a>!</p>
+                            <hr>
+                            <h2>Project Requirements for Cat Clicker Premium</h2>
+                            <h5>Visuals</h5>
+                            <p>The application should display</p>
+                            <ul>
+                                <li>a list of at least 5 cats, listed by name</li>
+                                <li>an area to display the selected cat</li>
+                            </ul>
+                            <p>In the cat display area, the following should be displayed</p>
+                             <ul>
+                                <li>the cat's name</li>
+                                <li>a picture of the cat</li>
+                                <li>text showing the number of clicks</li>
+                            </ul>
+                            <p>The specifics of the layout do not matter, so style it however you'd like.</p>
+                            <h5>Interaction</h5>
+                            <p>When a cat name is clicked in the list, the cat display area should update to show the data for the selected cat. The number of clicks in the cat area should be unique to each cat, and should increment when the cat's picture is clicked.</p>
+                            <hr>
+                    </div>
+                </div>
+                <div class="row CC">
+                        
+                                 <!--VIEW 1-->
+                    <div class='col-xs-12 col-md-4'>
+                            <ul class="catnav">
+                                </ul>
+                    </div>
+        <div class='col-xs-12 col-md-8'>
+           <!--VIEW 2-->
+            <div id="catClicker">
+                <div id='gallery'>
+                <img class='cat gallery' src='projects/catClicker/imageData/Tux&Sat.jpg'>
+                <img class='cat gallery' src='projects/catClicker/imageData/ChaoYun.jpg'>
+                <img class='cat gallery' src='projects/catClicker/imageData/Harry.jpg'>
+                <img class='cat gallery' src='projects/catClicker/imageData/Baxter.jpg'>
+                <img class='cat gallery' src='projects/catClicker/imageData/Lady.jpg'>
+                <img class='cat gallery' src='projects/catClicker/imageData/Snowball.jpg'>
+                </div>
             </div>
         </div>
-        <hr>
+                        
+                </div>
+            </div>
+        </div>
+        
+        
+        
+       
+        
+       
         <!--
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         -->
@@ -243,7 +266,7 @@ $(function(){
             var click_count = cat_data.click_count;
             //elements containing cat data
             var catName = $('<p></p>').html(name).addClass('catName');
-            var img = $('<img>').attr('src',url);
+            var img = $('<img>').addClass('cat').attr('src',url);
             var clicks = $('<p></p>').html(click_count).addClass('clicks');
             //containers for elements
             var clickUnit = $('<p></p>').addClass('clickUnit').html("clicks");
@@ -278,6 +301,6 @@ octopus.init();
 });
 
         </script>
-
+    <hr>
     </body>
 </html>

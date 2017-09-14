@@ -14,11 +14,16 @@
 
 
 <style>
-    body {position:relative; padding-top:50px; padding-left:0; padding-right:0; /*: scroll;*/}
+    body {position:relative; padding-top:55px; padding-left:0; padding-right:0; margin-bottom: none; /*: scroll;*/}
     .navbar-toggler-icon{
-        padding: .5rem, .5rem;
         font-size: 1rem;
     }
+
+    #top_nav button{
+        border:none;
+        margin-top: 5px;
+    }
+
     .navbar-light .navbar-toggler {
     border-color: rgba(0,0,0,0);
     }
@@ -26,23 +31,47 @@
         background-color:darkgrey;
         display: none;
     }
-    #about {
-        background-color: #efebe9
+    #contact {
+        padding-top:30px;
+        background-color: #efebe9;
         }
+
+    #message_me p{
+        opacity: .9;
+        font-size: .95em;
+    }
+
+    #contact_form{
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    #about{
+        /*background-color: #615D5C;
+        background-color: #7E4944;
+        background-color: #392B2B;
+        background-color: #1E3944;*/
+        background-color: #43454C;
+        color: white;
+
+    }
     
-    .profile img {
+    .profile {
     max-width: 100%;
-    height: auto;
+    background-size:cover;
+    height: 700px;
+    background-image: url('/profilepic1.jpg');
     }
 
     .row{
         max-width: 1170px;
     }
 
-    #project_container{
+    .project_container{
         position:relative;
         display:block;
         margin: auto;
+
         /*
         overflow-y: scroll;
         height: 600px;
@@ -82,17 +111,18 @@
     margin: auto;/*margin-left:20%; margin-right:20%; padding-top:30px; padding-bottom:30px;*/} 
      /*add @media query for making the margins 0px when less than 300 */
 
-     .form-control{
+     #contact_form .form-control{
          border-bottom: 1px solid rgba(0,0,0,.15);
          border-left: none;
          border-right: none;
          border-top: none;
          border-radius: 0rem;
-         
+         background-color: #efebe9;
      }
 
-     .form-control:focus {
+     #contact_form .form-control:focus {
          border-bottom: 2px solid rgba(0,0,0,.6);
+         background-color: #efebe9;
      }
 
      #submit{
@@ -121,12 +151,23 @@
 
     p{
         font-family: 'Nunito', sans-serif;
-        font-size: 1.1em;
+        text-align: left;
     }
+
+    .p_text{
+    font-weight: lighter;
+    font-size: .85em;
+    display: inline-block;
+    color: rgba(0,0,0,.87);
+}
 
     ul li{
         font-family: 'Nunito', sans-serif;
         font-size: 1em;
+    }
+
+    ul{
+        text-align: left;
     }
     
     h4 {
@@ -134,17 +175,68 @@
         color: rgba(0,0,0,.6);
         padding-top: 15px;
         padding-bottom: 15px;
+        text-align:left;
     }
+
+    h1{
+        text-align: left;
+    }
+
 
     h2 {
         color: rgba(0,0,0,.6);
         padding-top: 20px;
         padding-bottom: 20px;
+        text-align:left;
     } 
 
     h3 {
         padding-top: 15px;
         padding-bottom: 15px;
+        text-align:left;
+    }
+
+    h5{
+        padding-top: 20px;
+        padding-bottom: 6px;
+        font-weight: normal;
+        opacity: .8;
+        text-align:left;
+    }
+    
+    h6{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-weight: normal;
+        opacity: 1;
+        text-align:left;
+    }
+
+    .top1{
+        padding-top: 90px;
+        padding-bottom: 6px;
+        text-align: left;
+        color: white;
+        opacity: .8;
+        font-size: 32px;
+    }
+
+    .top2{
+        padding-top: 40px;
+        padding-bottom: 6px;
+        text-align: left;
+        color: white;
+        opacity: .8;
+        font-size: 26px;
+    }
+
+    .top3{
+        padding-top: 20px;
+        padding-bottom: 6px;
+        text-align: left;
+        color: white;
+        opacity: .8;
+        font-size: 18px;
     }
 
    .fa{
@@ -154,6 +246,79 @@
    #skills{
         text-align:left;
         font-size: .85em;
+   }
+
+   #methods{
+       background-color: #C8C3BD;
+       font-size: .9em;
+       opacity: .9;
+   }
+
+   .methods_col{
+       padding-top: 15px;
+       padding-bottom: 30px;
+   }
+
+   #apps{
+    background-color: #87857C;
+       font-size: .9em;
+       color: white;
+       opacity: .9;
+   }
+
+   #languages{
+    background-color: #E0E0E0;
+       font-size: .9em;
+       opacity: .9;
+
+   }
+
+   #frameworks{
+    background-color: #4B4A46;
+       font-size: .9em;
+       color: white;
+       opacity: .9;
+   }
+
+   .other_col p{
+    display: inline;
+    padding-right: 12px;
+   }
+
+   .other_col{
+    padding-top: 20px;
+    padding-bottom: 18px;
+    text-align: left;
+   }
+
+   .col_head{
+    margin-right: 26px;
+   }
+
+   .other_about{
+    padding-top: 18px;
+    margin-right: 4px;
+   }
+
+  #apps .fa{
+       font-size: 24px;
+       padding-right: 10px;
+   }
+
+   #methods .fa{
+       font-size: 24px;
+       padding-right: 10px;
+   }
+
+    #languages .fa{
+        font-size: 24px;
+        padding-right: 10px;
+        opacity: .8;
+    }
+
+    #frameworks .fa{
+       font-size: 24px;
+       padding-right: 10px;
    }
 
     .sidebar{height:100%;width:200px;background: url('projects/LanguageLearning/imageData/cover.png'), no-repeat, center, cover; position:absolute!important;z-index:2;overflow:auto}
@@ -201,10 +366,10 @@
            height:400px;
        }
        .projectTitle{
-           font-size: 14pt;
+           font-size: 16pt;
        }
        .projectDescription{
-           font-size: 10pt;
+           font-size: 12pt;
        }
     }
 
@@ -213,27 +378,40 @@
            height:350px;
        }
        .featured_text{
-           padding-top:100px;
+           padding-top:50px;
            /* -- also make text smaller */
        }
        .projectTitle{
-           padding-bottom:5px;
-           font-size: 12pt;
+           font-size: 16pt;
+           padding-top: 0px;
        }
 
        .projectDescription{
-           font-size: 9pt;
+           font-size: 12pt;
        }
     }
 
 
-    @media only screen and (max-width:750px) {
-       .featured_img {
+    @media only screen and (max-width:767px) {
+        .profile {
+    max-width: 100%;
+    background-size:cover;
+    height: 400px;
+    background-image: url('/profilepic1.jpg');
+    }
+    .top1{
+        padding-top: 40px;
+    }
+        .featured_img {
            height:300px;
        }
     }
     
     @media only screen and (max-width:575px) {
+        .projectTitle{
+            padding-bottom:5px;
+       }
+        
         .featured_img {
            height:250px;
        }
@@ -264,8 +442,10 @@
 
         <div class="collapse navbar-collapse" id="links">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                <li id="projects" class="nav-item"><a class="nav-link" href="">Projects</a></li>
                 <li id="aboutLink" class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li id="projects" class="nav-item"><a class="nav-link" href="#project_covers">Projects</a></li>
+                <li id="aboutLink" class="nav-item"><a class="nav-link" href="#methods">Toolkit</a></li>
+                <li id="aboutLink" class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 <!--
                 <li id="contactLink" class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 -->
@@ -311,10 +491,25 @@
             </div>
         -->
 
-    <div id="project_html">
-        <div id="project_container">
-            
+
+        <div id="about" class="container-fluid">
+                <div class="container">
+                    <div class='row'>
+                        <div class="col-md-6 profile">
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <p class='top1'>Hi! <br>I am a user experience designer passionate about human-centered research and inclusive design.</p>
+                                <p class='top3'>I enjoy learning about what people do, how, and why, <br> designing experiences grounded in user research, <br> testing my ideas, <br> and bringing them to life with code.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
+    
+
+    <div id="project_html">
+
     </div>
 
     
@@ -330,24 +525,169 @@
         
     </div>
     
-
-        <div id="about" class="container-fluid">
+        <div id='methods' class='container-fluid'>
             <div class="container">
                 <div class='row'>
-                    <div class="col-sm-6">
-                        <img class='profile' src='/profilepic1.jpg'>
+                    <div class='col-xs-1'>
+                        <i class="fa fa-briefcase other_about" aria-hidden="true"></i>
                     </div>
-                    <div class="col-sm-6">
-                        <div id='skills'>
-                            <h2>About</h2>
-                            <hr>
-                            <p>I am a human-centered researcher and designer well-versed in human-centered research methods, visual design principles, and programming fundamentals eager to contribute and further develop a strong, diverse set of skills collaborating on projects that have meaningful impact.</p>
-                            <hr>
-                            <p><strong>Methods </strong>| User/stakeholder interviews, contextual inquiry, affinity diagramming, wireframes, low to high fidelity prototypes, guerrilla user testing, use case scenarios, task analyses, journey and empathy mapping, personas, survey design, usability studies, cognitive walkthroughs, heuristic reviews, and competitive analyses.</p>
-                            <p><strong>Applications </strong>| Balsamiq Mockups, Sketch, Illustrator, InVision, Flinto, GitHub, Visual Studio Code, SourceTree</p>
-                            <p><strong>Languages </strong>| HTML5, CSS3, JavaScript</p>
-                            <p><strong>Frameworks/Libraries </strong>| Bootstrap, jQuery</p>
-                            <p><strong>Design Systems </strong>| Google Material Design, iOS Human Interface Guidelines</p>
+                    <div class='col-xs-11'>
+                        <div>
+                                <h5>UX Research and Design Methods</h5>
+                        </div>    
+                    </div>
+                </div>
+                <div class='row'>
+                        <div class='col-xs-12 col-md-4 methods_col'>
+                                <div>
+                                    <h6>Generative Research</h6>
+                                </div>
+                                <div>
+                                    <p>User/stakeholder interviews</p>
+                                    <p>Affinity mapping</p>
+                                    <p>Task analyses</p>
+                                    <p>Personas and empathy mapping</p>
+                                    <p>Experience mapping</p>
+                                    <p>Use case scenarios</p>
+                                </div>
+                            </div>
+            
+                            <div class='col-xs-12 col-md-4 methods_col'>
+                                    <div>
+                                        <h6>Design</h6>
+                                    </div>
+                                    <div>
+                                        <p>Sketches and paper prototypes</p>
+                                        <p>Wireframes and wireflows</p>
+                                        <p>Medium to high fidelity prototypes</p>
+                                    </div>
+                            </div>
+            
+                            <div class='col-xs-12 col-md-4 methods_col'>
+                                    <div>
+                                        <h6>Evaluative Research</h6>
+                                    </div>
+                                    <div>
+                                        <p>Designing and moderating in-person usability studies</p>
+                                        <p>Guerilla to lab-based testing</p>
+                                        <p>Qualitative and quantitative data analysis</p>
+                                        <p>Heuristic reviews and competitive analysis</p>
+                                        <p>Visualizing research findings and highlighting key insights</p>
+                                    </div>
+                            </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <div id='apps' class='container-fluid'>
+                <div class="container">
+                    <div class='row'>
+                            <div class='col-xs-1'>
+                                            <i class="fa fa-desktop other_about" aria-hidden="true"></i>
+                            </div>
+                            <div class='col-xs-11'>
+                                    <div>
+                                            <h5>Applications</h5>
+                                    </div>
+                            </div>
+                    </div>
+                    <div class='row'>
+                            <div class='col-xs-12 col-md-12'>
+                                    <div class='other_col'>
+                                            <p>Balsamiq Mockups</p>
+                                            <p>Sketch</p>
+                                            <p>Illustrator</p>
+                                            <p>InVision</p>
+                                            <p>Flinto</p>
+                                            <p>GitHub</p>
+                                            <p>Visual Studio Code</p>
+                                        </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+ 
+
+            <div id='languages' class='container-fluid'>
+                    <div class="container">
+                        <div class='row'>
+                                <div class='col-xs-1'>
+                                        <i class="fa fa-code other_about" aria-hidden="true"></i>
+                                </div>    
+                            <div class='col-xs-11'>
+                                        <div>
+                                            <h5>Languages</h5>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class='row'>
+                                <div class='col-xs-12 col-md-12'>
+                                        <div class='other_col'>
+                                                <p>HTML5</p>
+                                                <p>CSS3</p>
+                                                <p>JavaScript</p>
+                                            </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id='frameworks' class='container-fluid'>
+                        <div class="container">
+                            <div class='row'>
+                                    <div class='col-xs-1'>
+                                            <i class="fa fa-book other_about" aria-hidden="true"></i>
+                                    </div>
+                                    <div class='col-xs-11'>
+                                            <div>
+                                                <h5>Frameworks and Libraries</h5>
+                                            </div>
+                                    </div>
+                            </div>
+                            <div class='row'>
+                                    <div class='col-xs-12 col-md-12'>
+                                            <div class='other_col'>
+                                                    <p>Bootstrap</p>
+                                                    <p>jQuery</p>
+                                                </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+        <div id="contact" class="container-fluid">
+            <div class="container">
+                <div class='row'>
+                    <div id="message_me" class="col-md-5">
+                            <div>
+                                <h5>Message me!</h5>
+                                <p>I am eager to contribute and further develop a strong, diverse set of skills collaborating on projects that have meaningful impact.</p>
+                                </div>
+                    </div>
+                    <div class='col-md-1'></div>
+                    <div id="contact_form" class="col-md-6">
+                        <div>
+                                <form>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="contactName" placeholder="Name">
+                                        </div>
+                                    
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="contactEmail" placeholder="Email">
+                                        </div>
+                
+                                    <div class="form-group">
+                                            <textarea id='contactMessage' class="form-control" rows="4" placeholder="Message"></textarea>
+                                    </div>
+                
+                                            <button id="submit" type="submit" class="btn btn-md" data-toggle="collapse" data-target="#thanks">Send Message</button>
+                                </form>
                         </div>
                     </div>
                 </div>
