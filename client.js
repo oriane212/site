@@ -13,7 +13,7 @@ window.onload = function () {
         var email = $('#contactEmail').val();
         var message = $('#contactMessage').val();
         //send POST request
-        $.post('/submit',
+        $.post("/submit",
             { name: name, email: email, message: message }
         )
             .done(() => { $('#message_sent').modal() })

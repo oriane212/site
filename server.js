@@ -94,6 +94,7 @@ var server = http.createServer(function(req, res) {
     else if (req.url == "/submit"){
         let body = [];
         let stringbody = '';
+        console.log("w are in the submit handler");
         req.on('data', function(chunk){
             body.push(chunk);
             console.log(chunk);
