@@ -96,6 +96,7 @@ var server = http.createServer(function(req, res) {
         let stringbody = '';
         req.on('data', function(chunk){
             body.push(chunk);
+            console.log(chunk);
         });
         req.on('end', function(){
             stringbody = Buffer.concat(body).toString();
