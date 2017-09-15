@@ -115,8 +115,10 @@ var server = http.createServer(function(req, res) {
             transporter.sendMail(email, function(error, info){
                 if (error) {
                   console.log(error);
+                  res.sendStatus(500);
                 } else {
                   console.log('Email sent: ' + info.response);
+                  res.sendStatus(200);
                 }
               });
         });
