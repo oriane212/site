@@ -13,11 +13,12 @@ window.onload = function () {
         var email = $('#contactEmail').val();
         var message = $('#contactMessage').val();
         //send POST request
-        $.post("http://www.orianed.com/submit",
+        $.post("submit",
             { name: name, email: email, message: message }
         )
-            .done(() => { $('#message_sent').modal() })
+            .done(() => { $('#message_sent').modal();$('input').val('');$('textarea').val(''); })
             .fail(() => { $('#message_error').modal() });
+         
     })
 
 
@@ -59,23 +60,13 @@ window.onload = function () {
 
             $('.project_container').fadeOut('slow');
 
-            //$('project_container').fadeOut('slow');
-            //$('#project_container').empty();
-            //$('#project_container').hide();
-            //$('#about').fadeOut('fast');
-
-            //$('#project_covers').fadeOut('slow', function () {
-
             this.featured_section.fadeOut('slow', function () {
                 this.projectContainer.fadeIn('slow');
                 featureID = this.featured_section.attr('id');
-                //$('#project_html').css({ 'margin': '40px', 'height':'100%' });
+               
                 $('#' + this.pHTML_ID).fadeIn('slow');
-                //$('#project_container').append(this.projectHTML);
+                
                 window.scrollTo(0, 700);
-                //$('#project_container').fadeIn('slow');
-                //$('#about').delay(500).fadeIn('slow');
-
 
             }.bind(this));
 
@@ -126,22 +117,6 @@ window.onload = function () {
         this.DOMlayout();
     }
 
-    /*
-        $('#projects').click(function () {
-            $('#project_container').fadeOut('slow');
-            $('#project_container').empty();
-            $('#project_covers').fadeIn('slow');
-            $('#about').fadeOut('fast');
-        });
-    
-        
-        $('#aboutLink').click(function () {
-            $('#project_container').fadeOut('fast');
-            $('#project_container').empty();
-            //$('#project_covers').fadeOut('fast');
-            $('#about').fadeIn('slow');
-        });
-    */
 
     $('#about').hide();
     $('#methods').hide();
@@ -149,7 +124,6 @@ window.onload = function () {
     $('#languages').hide();
     $('#frameworks').hide();
     $('#contact').hide();
-    //$('#project_covers').hide();
 
 
     $.get("/projects", function (data, status) {
@@ -160,11 +134,6 @@ window.onload = function () {
             all_DOMlayouts.push(new ProjectElementFromObject(currentProjectObject));
         });
 
-        /*
-        $('#project_covers').fadeIn('slow', function(){
-            $('#about').fadeIn('slow');
-        });    
-        */
         $('.project_container').hide();
         $('body').scrollTop(10);
         $('#about').delay(500).fadeIn('slow');

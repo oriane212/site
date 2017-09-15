@@ -6,7 +6,6 @@ var nodemailer = require('nodemailer');
 var imgDict = {};
 
 var allProjects = fs.readdirSync('./projects')
-//console.log(allProjects);
 
 //foreach file name in /projects, call fs.statSync and check if isDirectory is true - if it's true, then pass it out.
 
@@ -17,24 +16,8 @@ var filteredProjects = allProjects.filter(function (currentFile) {
 var projects = filteredProjects.map(function (currentFolderName) {
 
     var currentProjectFiles = fs.readdirSync('./projects/' + currentFolderName);
-    //console.log(currentProjectFiles);
-
-    //var projectTitle = null;  
-    //var projectDescription = null;
     var projectHTML = null;
     var imageData = null;
-
-    /*
-    if (fs.existsSync('./projects/' + currentFolderName + '/title')) {
-        projectTitle = fs.readFileSync('./projects/' + currentFolderName + '/title', 'utf8');
-        //console.log(projectTitle);
-    }
-
-    if (fs.existsSync('./projects/' + currentFolderName + '/description')) {
-        projectDescription = fs.readFileSync('./projects/' + currentFolderName + '/description', 'utf8');
-        //console.log(projectDescription);
-    }
-    */
 
 
     if (fs.existsSync('./projects/' + currentFolderName + '/project.html')) {
@@ -53,7 +36,6 @@ var projects = filteredProjects.map(function (currentFolderName) {
         });
     }
 
-
     return {
         currentFolderName: currentFolderName,
         //title: projectTitle,
@@ -64,10 +46,8 @@ var projects = filteredProjects.map(function (currentFolderName) {
 
 });
 
-//console.log(projects);
 
 var server = http.createServer(function (req, res) {
-
 
     console.log(req.url);
 
