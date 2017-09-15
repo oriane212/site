@@ -71,8 +71,8 @@ var server = http.createServer(function (req, res) {
 
     console.log(req.url);
 
-    let body = [];
-    let stringbody = '';
+    var body = [];
+    var stringbody = '';
     req.on('data', function (chunk) {
         body.push(chunk);
         console.log(chunk);
@@ -105,11 +105,12 @@ var server = http.createServer(function (req, res) {
     else if (req.url == "/submit") {
 
         console.log("w are in the submit handler");
+        console.log(req);
 
         req.on('end', function () {
             stringbody = Buffer.concat(body).toString();
             console.log(stringbody);
-            let jsonBody = qs.parse(stringbody);
+            var jsonBody = qs.parse(stringbody);
             console.log(jsonBody);
             //create email
             var email = {
