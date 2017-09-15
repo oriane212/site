@@ -68,7 +68,15 @@ var projects = filteredProjects.map(function(currentFolderName){
 
 var server = http.createServer(function(req, res) {
 
+
         console.log(req.url);
+        
+        let body = [];
+        let stringbody = '';
+        req.on('data', function(chunk){
+            body.push(chunk);
+            console.log(chunk);
+        });
 
     if (imgDict[req.url] != null){
         res.write(imgDict[req.url]);
@@ -92,13 +100,9 @@ var server = http.createServer(function(req, res) {
         res.write(fs.readFileSync('./node_modules/@material/button/dist/mdc.button.css','utf-8'));
     }
     else if (req.url == "/submit"){
-        let body = [];
-        let stringbody = '';
+       
         console.log("w are in the submit handler");
-        req.on('data', function(chunk){
-            body.push(chunk);
-            console.log(chunk);
-        });
+        
         req.on('end', function(){
             stringbody = Buffer.concat(body).toString();
             console.log(stringbody);
@@ -115,10 +119,8 @@ var server = http.createServer(function(req, res) {
             transporter.sendMail(email, function(error, info){
                 if (error) {
                   console.log(error);
-                  res.sendStatus(500);
                 } else {
                   console.log('Email sent: ' + info.response);
-                  res.sendStatus(200);
                 }
               });
         });
