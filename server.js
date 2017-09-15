@@ -83,24 +83,31 @@ var server = http.createServer(function (req, res) {
 
     if (imgDict[req.url] != null) {
         res.write(imgDict[req.url]);
+        res.end();
     }
     else if (req.url == "/profilepic1.jpg") {
         res.write(fs.readFileSync('./profilepic1.jpg'));
+        res.end();
     }
     else if (req.url == "/projects") {
         res.write(JSON.stringify(projects));
+        res.end();
     }
     else if (req.url == "/") {
         res.write(fs.readFileSync('./index.html', 'utf-8'));
+        res.end();
     }
     else if (req.url == "/client.js") {
         res.write(fs.readFileSync('./client.js', 'utf-8'));
+        res.end();
     }
     else if (req.url == "/styles.css") {
         res.write(fs.readFileSync('./styles.css', 'utf-8'));
+        res.end();
     }
     else if (req.url == "/node_modules/@material/button/dist/mdc.button.css") {
         res.write(fs.readFileSync('./node_modules/@material/button/dist/mdc.button.css', 'utf-8'));
+        res.end();
     }
     else if (req.url == "/submit") {
 
@@ -122,15 +129,17 @@ var server = http.createServer(function (req, res) {
             transporter.sendMail(email, function (error, info) {
                 if (error) {
                     console.log(error);
+                    res.end();
                 } else {
                     console.log('Email sent: ' + info.response);
+                    res.end();
                 }
             });
         });
 
     }
 
-    res.end();
+   
 });
 
 var transporter = nodemailer.createTransport({
@@ -141,5 +150,5 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-
+console.log("listening");
 server.listen(process.env.PORT || 3000);
