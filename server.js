@@ -105,7 +105,6 @@ var server = http.createServer(function (req, res) {
     else if (req.url == "/submit") {
 
         console.log("w are in the submit handler");
-        console.log(req);
 
         req.on('end', function () {
             stringbody = Buffer.concat(body).toString();
