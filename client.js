@@ -7,39 +7,39 @@ var pHTML_ID = 0;
 
 window.onload = function () {
 
-    //on SUBMIT button click
-    $('#submit').click(function(){
+    $('#contactForm').on('submit', function (evt) {
+        evt.preventDefault();
         var name = $('#contactName').val();
         var email = $('#contactEmail').val();
         var message = $('#contactMessage').val();
         //send POST request
-        $.post('/submit',{name: name, email: email, message: message});
-        //feedback
-        $('#message_sent').modal();
-        /*$('#contactName').val('');
-        $('#contactEmail').val('');
-        $('#contactMessage').val('');*/
-    });
+        $.post('/submit',
+            { name: name, email: email, message: message }
+        )
+            .done(() => { $('#message_sent').modal() })
+            .fail(() => { $('#message_error').modal() });
+    })
+
 
 
     function ProjectElementFromObject(projectObject) {
         // properties storing jQuery objects for title, description, cover image and html from project object
 
-        this.projectHTML = $('<div></div>').html(projectObject.projectHTML).css({ 'margin': '40px', 'height':'100%' });
+        this.projectHTML = $('<div></div>').html(projectObject.projectHTML).css({ 'margin': '40px', 'height': '100%' });
 
         // gets h1 title from projectHTML
         this.projectTitleText = this.projectHTML.children('h1').text();
 
         // puts that title text into a project title div
         this.projectTitle = $('<div></div>').addClass('projectTitle').text(this.projectTitleText);
-        
-        this.f_ID = this.projectTitleText.replace(/ /g,"_");
+
+        this.f_ID = this.projectTitleText.replace(/ /g, "_");
 
         this.pHTML_ID = pHTML_ID;
 
         // gets description from projectHTML 
         this.projectDescriptionText = this.projectHTML.children('p:first').text();
-        
+
 
         // puts that description text into a project description div
         this.projectDescription = $('<div></div>').addClass('projectDescription').text(this.projectDescriptionText);
@@ -50,27 +50,27 @@ window.onload = function () {
         this.coverImage.addClass('col-xs-12 col-sm-8');
 
         this.dataFromServer = projectObject;
-        
-        
+
+
         clickHandler = function (event) {
             if (featureID.length != 0) {
                 $('#' + featureID).delay(1000).fadeIn('slow');
             }
 
             $('.project_container').fadeOut('slow');
-            
+
             //$('project_container').fadeOut('slow');
             //$('#project_container').empty();
             //$('#project_container').hide();
             //$('#about').fadeOut('fast');
 
             //$('#project_covers').fadeOut('slow', function () {
-            
-            this.featured_section.fadeOut('slow', function(){
+
+            this.featured_section.fadeOut('slow', function () {
                 this.projectContainer.fadeIn('slow');
                 featureID = this.featured_section.attr('id');
                 //$('#project_html').css({ 'margin': '40px', 'height':'100%' });
-                $('#'+ this.pHTML_ID).fadeIn('slow');
+                $('#' + this.pHTML_ID).fadeIn('slow');
                 //$('#project_container').append(this.projectHTML);
                 window.scrollTo(0, 700);
                 //$('#project_container').fadeIn('slow');
@@ -91,7 +91,7 @@ window.onload = function () {
                 this.featured_section.css({ 'background-color': background_col });
                 background_col = '#FFFFFF';
             }
-            
+
             else {
                 this.featured_section.css({ 'background-color': background_col });
                 background_col = '#FFFFFF';
@@ -126,23 +126,23 @@ window.onload = function () {
         this.DOMlayout();
     }
 
-/*
-    $('#projects').click(function () {
-        $('#project_container').fadeOut('slow');
-        $('#project_container').empty();
-        $('#project_covers').fadeIn('slow');
-        $('#about').fadeOut('fast');
-    });
+    /*
+        $('#projects').click(function () {
+            $('#project_container').fadeOut('slow');
+            $('#project_container').empty();
+            $('#project_covers').fadeIn('slow');
+            $('#about').fadeOut('fast');
+        });
+    
+        
+        $('#aboutLink').click(function () {
+            $('#project_container').fadeOut('fast');
+            $('#project_container').empty();
+            //$('#project_covers').fadeOut('fast');
+            $('#about').fadeIn('slow');
+        });
+    */
 
-    
-    $('#aboutLink').click(function () {
-        $('#project_container').fadeOut('fast');
-        $('#project_container').empty();
-        //$('#project_covers').fadeOut('fast');
-        $('#about').fadeIn('slow');
-    });
-*/
-    
     $('#about').hide();
     $('#methods').hide();
     $('#apps').hide();
@@ -164,7 +164,7 @@ window.onload = function () {
         $('#project_covers').fadeIn('slow', function(){
             $('#about').fadeIn('slow');
         });    
-        */    
+        */
         $('.project_container').hide();
         $('body').scrollTop(10);
         $('#about').delay(500).fadeIn('slow');
@@ -173,7 +173,7 @@ window.onload = function () {
         $('#languages').delay(2000).fadeIn('slow');
         $('#frameworks').delay(2000).fadeIn('slow');
         $('#contact').delay(2000).fadeIn('slow');
-    
+
     });
 
 };

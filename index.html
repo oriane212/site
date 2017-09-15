@@ -673,7 +673,7 @@
                     <div class='col-md-1'></div>
                     <div id="contact_form" class="col-md-6">
                         <div>
-                                <form id='contactForm'>
+                                <form method='POST' id='contactForm'>
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="contactName" placeholder="Name">
                                         </div>
@@ -699,8 +699,25 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div id='message_error' class='modal' role='dialog'>
+                                            <div class='modal-dialog'>
+                                                <div class='modal-content'>
+                                                        <div class="modal-header">
+                                                                <p>Oops!</p>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                  </button>
+                                                        </div>
+                                                        <div class='modal-body'>
+                                                                <p>Something went wrong. Please try sending your message again.</p>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
                 
                                             <button id="submit" type="submit" class="btn btn-md">Send Message</button>
+                                            
                                 </form>
                         </div>
                     </div>

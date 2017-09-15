@@ -115,7 +115,6 @@ var server = http.createServer(function(req, res) {
                   console.log(error);
                 } else {
                   console.log('Email sent: ' + info.response);
-                
                 }
               });
         });
