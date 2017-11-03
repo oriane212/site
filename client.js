@@ -1,7 +1,7 @@
 
 var all_DOMlayouts = [];
 var background_col = '#FFFFFF';
-var delayTime = 1000;
+var delayTime = 2000;
 var featureID = '';
 var pHTML_ID = 0;
 
@@ -120,10 +120,10 @@ window.onload = function () {
 
     $('#about').hide();
     $('#methods').hide();
-    $('#apps').hide();
-    $('#languages').hide();
-    $('#frameworks').hide();
+    $('#tools').hide();
+    $('#project_covers').hide();
     $('#contact').hide();
+    
 
 
     $.get("/projects", function (data, status) {
@@ -137,10 +137,9 @@ window.onload = function () {
         $('.project_container').hide();
         $('body').scrollTop(10);
         $('#about').delay(500).fadeIn('slow');
-        $('#methods').delay(2000).fadeIn('slow');
-        $('#apps').delay(2000).fadeIn('slow');
-        $('#languages').delay(2000).fadeIn('slow');
-        $('#frameworks').delay(2000).fadeIn('slow');
+        $('#methods').delay(1000).fadeIn('slow');
+        $('#tools').delay(1500).fadeIn('slow');
+        $('#project_covers').delay(2000).fadeIn('slow');
         $('#contact').delay(2000).fadeIn('slow');
 
     });
