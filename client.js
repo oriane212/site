@@ -1,7 +1,7 @@
 
 var all_DOMlayouts = [];
 var background_col = '#FFFFFF';
-var delayTime = 2000;
+var delayTime = 1000;
 var featureID = '';
 var pHTML_ID = 0;
 
@@ -25,7 +25,7 @@ window.onload = function () {
 
     function ProjectElementFromObject(projectObject) {
         // properties storing jQuery objects for title, description, cover image and html from project object
-
+        
         this.projectHTML = $('<div></div>').html(projectObject.projectHTML).css({ 'margin': '40px', 'height': '100%' });
 
         // gets h1 title from projectHTML
@@ -100,12 +100,12 @@ window.onload = function () {
             this.featured_section.hide();
 
             $('#project_covers').append(this.featured_section);
-
+            
             this.projectContainer = $('<div></div>').addClass('project_container').append(this.projectHTML).attr('id', this.pHTML_ID);
             $('#project_html').append(this.projectContainer);
 
             this.featured_section.delay(delayTime).fadeIn('slow');
-            delayTime += 500;
+            //delayTime += 500;
 
             pHTML_ID += 1;
         }
@@ -136,11 +136,11 @@ window.onload = function () {
 
         $('.project_container').hide();
         $('body').scrollTop(10);
-        $('#about').delay(500).fadeIn('slow');
-        $('#methods').delay(1000).fadeIn('slow');
-        $('#tools').delay(1500).fadeIn('slow');
-        $('#project_covers').delay(2000).fadeIn('slow');
-        $('#contact').delay(2000).fadeIn('slow');
+        $('#about').fadeIn('slow');
+        $('#methods').delay(500).fadeIn('slow');
+        $('#tools').delay(500).fadeIn('slow');
+        $('#project_covers').delay(1000).fadeIn('slow');
+        $('#contact').delay(1000).fadeIn('slow');
 
     });
 
