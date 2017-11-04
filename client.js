@@ -97,14 +97,14 @@ window.onload = function () {
 
             this.featured_section.click(clickHandler.bind(this));
 
-            this.featured_section.hide();
+            //this.featured_section.hide();
 
             $('#project_covers').append(this.featured_section);
             
             this.projectContainer = $('<div></div>').addClass('project_container').append(this.projectHTML).attr('id', this.pHTML_ID);
             $('#project_html').append(this.projectContainer);
 
-            this.featured_section.delay(delayTime).fadeIn('slow');
+            //this.featured_section.fadeIn('slow');
             //delayTime += 500;
 
             pHTML_ID += 1;
@@ -118,11 +118,11 @@ window.onload = function () {
     }
 
 
-    $('#about').hide();
-    $('#methods').hide();
-    $('#tools').hide();
-    $('#project_covers').hide();
-    $('#contact').hide();
+    //$('#about').hide();
+    //$('#methods').hide();
+    //$('#tools').hide();
+    //$('#project_covers').hide();
+    //$('#contact').hide();
     
 
 
@@ -136,11 +136,11 @@ window.onload = function () {
 
         $('.project_container').hide();
         $('body').scrollTop(10);
-        $('#about').fadeIn('slow');
-        $('#methods').delay(500).fadeIn('slow');
-        $('#tools').delay(500).fadeIn('slow');
-        $('#project_covers').delay(1000).fadeIn('slow');
-        $('#contact').delay(1000).fadeIn('slow');
+        //$('#about').fadeIn('slow');
+        //$('#methods').fadeIn('slow');
+        //$('#tools').fadeIn('slow');
+        //$('#project_covers').fadeIn('slow');
+        //$('#contact').fadeIn('slow');
 
     });
 
