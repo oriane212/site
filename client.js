@@ -29,7 +29,7 @@ window.onload = function () {
         this.projectHTML = $('<div></div>').html(projectObject.projectHTML).css({ 'margin': '40px', 'height': '100%' });
 
         // gets h1 title from projectHTML
-        this.projectTitleText = this.projectHTML.children('h1').text();
+        this.projectTitleText = this.projectHTML.find('.projectHeader').text();
 
         // puts that title text into a project title div
         this.projectTitle = $('<div></div>').addClass('projectTitle').text(this.projectTitleText);
@@ -39,11 +39,13 @@ window.onload = function () {
         this.pHTML_ID = pHTML_ID;
 
         // gets description from projectHTML 
-        this.projectDescriptionText = this.projectHTML.children('p:first').text();
+        this.projectDescriptionText = this.projectHTML.find('.desc').text();
 
+        this.projectTypeText = this.projectHTML.find('.projectType').text();
 
         // puts that description text into a project description div
         this.projectDescription = $('<div></div>').addClass('projectDescription').text(this.projectDescriptionText);
+
 
         this.coverImagePath = '/projects/' + projectObject.currentFolderName + '/imageData/cover.png';
 
@@ -90,12 +92,19 @@ window.onload = function () {
 
 
             this.row = $('<div></div>').addClass('row');
-            this.coverText = $('<div></div>').addClass('featured_text col-xs-12 col-sm-4').append(this.projectTitle, this.projectDescription);
+            
+
+
+            //create and append button for project
+            this.chevdown = $('<i></i>').addClass('fa fa-chevron-down');
+            this.button = $('<div></div>').addClass('projectBtn').append(this.projectTypeText, this.chevdown);
+            
+            this.coverText = $('<div></div>').addClass('featured_text col-xs-12 col-sm-4').append(this.projectTitle, this.projectDescription, this.button);
 
             this.featured_section.append(this.row);
             this.row.append(this.coverImage, this.coverText);
 
-            this.featured_section.click(clickHandler.bind(this));
+            this.button.click(clickHandler.bind(this));
 
             //this.featured_section.hide();
 

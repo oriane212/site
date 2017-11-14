@@ -18,7 +18,7 @@
 <style>
     .initials{
         font-family: 'Nunito', sans-serif;
-        text-transform: uppercase;
+        letter-spacing: 1.5px;
         font-weight: 200;
         opacity: .8;
         color: white;
@@ -159,13 +159,36 @@
             font-family: 'Nunito', sans-serif;
     font-weight: 200;
     font-size: 11pt;
+    width: 100px;
+    text-align: center;
         }
+
      #submit:hover {
          background-color:#bdb9b7;
          color:rgba(0,0,0,.8);
      }
+
+     .projectBtn {
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+        font-weight: 400;
+        font-size: 9pt;
+        background-color: #F8F8F7;
+        color:rgba(0,0,0,.7);
+        width: 140px;
+        height: 40px;
+        padding-top: 12px;
+        padding-right: 6px;
+        margin-top: 8px;
+        margin-bottom: 20px;
+        border-radius: .2rem;
+     }
     
-    }
+     .projectBtn:hover {
+         background-color:#bdb9b7;
+         color:rgba(0,0,0,1.0);
+     }
+
     #contact h2 {
         color:white;
     }
@@ -217,8 +240,16 @@
         text-align:left;
     }
 
-    h1{
+    .projectHeader{
         text-align: left;
+        font-family: 'Permanent marker', cursive;
+        font-size: 32pt;
+    }
+
+    .projectType{
+        font-family: 'Nunito', sans-serif;
+        text-align: left;
+        font-weight: 400;
     }
 
 
@@ -251,7 +282,8 @@
     }
 
     #top{
-        padding-top:150px;
+        padding-top:170px;
+        padding-left:30px;
     }
     
     .top1{
@@ -332,7 +364,8 @@
     }
 
    .fa{
-       font-size:18px;
+       font-size:14px;
+       margin-left:10px;
    }
         
    #skills{
@@ -425,9 +458,15 @@
 
    #links a{
        text-transform: uppercase;
-       font-size: 12px;
+       font-size: 10px;
        color: white;
-       margin-top: 2px;
+       margin-top: 6px;
+       letter-spacing: 1px;
+    font-weight: 400px;
+   }
+
+   #links a:hover{
+       background-color:#4A4A4A;
    }
 
    .methods_list{
@@ -471,12 +510,7 @@
     
 
     @media only screen and (min-width:993px){
-        .featured_section {
-            opacity:.6;
-        }
-        .featured_section:hover {
-            opacity:1;
-        }
+        
         .featured_text{
            padding-top:150px;
            /* -- also make text smaller */
@@ -593,6 +627,7 @@
 
         <div class="collapse navbar-collapse" id="links">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+
                 <li id="projects" class="nav-item"><a class="nav-link" href="#project_covers">Projects</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 <!--
@@ -920,7 +955,7 @@
                                             </div>
                                         </div>
                 
-                                            <button id="submit" type="submit" class="btn btn-md">Send</button>
+                                            <button id="submit" type="submit" class="btn btn-md">SEND</button>
                                             
                                 </form>
                         </div>
