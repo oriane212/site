@@ -51,7 +51,7 @@ if (fs.existsSync('./chart_stuff/dist/')) {
     allFiles = fs.readdirSync('./chart_stuff/dist/');
     allFiles.forEach((fileName)=>{
         var currentFilePathOnDisk = './chart_stuff/dist/'+fileName;
-        chart_stuffDict[currentFilePathOnDisk] = fs.readFileSync(currentFilePathOnDisk);
+        chart_stuffDict["/"+filename] = fs.readFileSync(currentFilePathOnDisk);
     });
     console.log(Object.keys(chart_stuffDict));
 }
