@@ -73,14 +73,14 @@ var server = http.createServer(function (req, res) {
         res.write(imgDict[req.url]);
         res.end();
     }
-    
+
     else if(chart_stuffDict[req.url] != null){
         res.write(chart_stuffDict[req.url]);
         res.end();
     }
 
     else if(req.url == "/chartalt/eg"){
-        res.write(fs.readFile('./chart_stuff/dist/index.html'))
+        res.write(fs.readFileSync('./chart_stuff/dist/index.html'))
         res.end();
     }
     else if (req.url == "/profilepic1.jpg") {
