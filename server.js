@@ -50,8 +50,10 @@ var projects = filteredProjects.map(function (currentFolderName) {
 if (fs.existsSync('./chart_stuff/dist/')) {
     allFiles = fs.readdirSync('./chart_stuff/dist/');
     allFiles.forEach((fileName)=>{
-        chart_stuffDict[fileName] = fs.readFileSync('./chart_stuff/dist/'+fileName);
-    })
+        var currentFilePathOnDisk = './chart_stuff/dist/'+fileName;
+        chart_stuffDict[currentFilePathOnDisk] = fs.readFileSync(currentFilePathOnDisk);
+    });
+    console.log(Object.keys(chart_stuffDict));
 }
 
 
