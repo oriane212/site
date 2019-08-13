@@ -4,6 +4,7 @@ var qs = require('querystring');
 var nodemailer = require('nodemailer');
 
 var imgDict = {};
+var chart_stuffDict = {};
 
 var allProjects = fs.readdirSync('./projects')
 
@@ -46,6 +47,13 @@ var projects = filteredProjects.map(function (currentFolderName) {
 
 });
 
+if (fs.existsSync('./chart_stuff/dist/')) {
+    allFiles = fs.readdirSync('./chart_stuff/dist/');
+    allFiles.forEach((fileName)=>{
+        chart_stuffDict[fileName] = fs.readFileSync('./chart_stuff/dist/'+fileName);
+    })
+}
+
 
 var server = http.createServer(function (req, res) {
 
@@ -63,6 +71,16 @@ var server = http.createServer(function (req, res) {
 
     if (imgDict[req.url] != null) {
         res.write(imgDict[req.url]);
+        res.end();
+    }
+    
+    else if(chart_stuffDict[req.url] != null){
+        res.write(chart_stuffDict[req.url]);
+        res.end();
+    }
+
+    else if(req.url == "/chartalt/eg"){
+        res.write(fs.readFile('./chart_stuff/dist/index.html'))
         res.end();
     }
     else if (req.url == "/profilepic1.jpg") {
